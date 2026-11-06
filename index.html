@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>دیدگاه | کلاس تفکر و سواد رسانه‌ای</title>
+<meta name="description" content="دیدگاه، اپلیکیشن کلاس تفکر و سواد رسانه‌ای: فعالیت هفتگی، ارسال عکس و ویدیو، ویترین کلاس، نمرات گروه و گفتگو با استاد.">
+<meta name="author" content="نیما جانی، ایلیا باستانی">
+<meta name="theme-color" content="#0f2647">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/img/logo-64.png">
+<link rel="apple-touch-icon" href="assets/img/logo-192.png">
+<meta property="og:title" content="دیدگاه | کلاس تفکر و سواد رسانه‌ای">
+<meta property="og:description" content="فعالیت هفتگی، ارسال کار گروهی، نمرات و گفتگو با استاد در یک اپ.">
+<meta property="og:image" content="assets/img/banner.jpg">
+<link rel="preload" href="assets/fonts/estedad_regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/fonts/estedad_bold.ttf" as="font" type="font/ttf" crossorigin>
+<style>
+  @font-face { font-family: Estedad; src: url(assets/fonts/estedad_regular.ttf) format("truetype"); font-weight: 400; font-display: swap; }
+  @font-face { font-family: Estedad; src: url(assets/fonts/estedad_medium.ttf) format("truetype"); font-weight: 500; font-display: swap; }
+  @font-face { font-family: Estedad; src: url(assets/fonts/estedad_semibold.ttf) format("truetype"); font-weight: 600; font-display: swap; }
+  @font-face { font-family: Estedad; src: url(assets/fonts/estedad_bold.ttf) format("truetype"); font-weight: 700; font-display: swap; }
+
+  :root {
+    --navy-900: #0b1d38;
+    --navy-800: #0f2647;
+    --navy-700: #13305a;
+    --navy-500: #2c4a75;
+    --blue: #3d8fd6;
+    --ice: #e8edf4;
+    --ice-2: #d6dfea;
+    --text: #13294a;
+    --muted: #5d6f88;
+    --white: #ffffff;
+    --radius: 22px;
+    --header-h: 72px;
+    --safe-b: env(safe-area-inset-bottom, 0px);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: Estedad, Tahoma, sans-serif;
+    color: var(--text);
+    background: var(--ice);
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; height: auto; display: block; }
+  :focus-visible { outline: 3px solid #6cc3ff; outline-offset: 3px; border-radius: 8px; }
+  .wrap { width: min(1160px, 100% - 48px); margin-inline: auto; }
+
+  /* ---------- Header ---------- */
+  header.top {
+    position: fixed; inset: 0 0 auto 0; z-index: 50;
+    transition: background .25s, box-shadow .25s;
+  }
+  header.top.scrolled { background: rgba(11, 29, 56, .92); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 6px 24px rgba(0,0,0,.18); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); }
+  .brand { display: flex; align-items: center; gap: 12px; color: var(--white); font-weight: 700; font-size: 1.3rem; }
+  .brand img { width: 40px; height: 40px; border-radius: 12px; }
+  .nav-links { display: flex; gap: 28px; color: #c5d3e6; font-size: .95rem; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 44px; font-family: inherit; font-weight: 700; border: 0; cursor: pointer;
+    border-radius: 16px; transition: transform .15s, box-shadow .2s, background .2s;
+    white-space: nowrap;
+  }
+  .btn:active { transform: scale(.97); }
+  .btn svg { width: 22px; height: 22px; flex: none; }
+  .btn-small { padding: 8px 18px; font-size: .9rem; background: var(--white); color: var(--navy-800); }
+  .btn-small svg { width: 18px; height: 18px; }
+  .btn-primary { padding: 15px 30px; font-size: 1.1rem; background: var(--white); color: var(--navy-800); box-shadow: 0 12px 30px rgba(0,0,0,.25); }
+  .btn-dark { padding: 15px 30px; font-size: 1.1rem; background: var(--navy-800); color: var(--white); box-shadow: 0 12px 30px rgba(15,38,71,.3); }
+  .btn-ghost { padding: 14px 26px; font-size: 1rem; color: var(--white); border: 1.5px solid rgba(255,255,255,.35); background: transparent; }
+
+  @media (hover: hover) {
+    .nav-links a:hover { color: var(--white); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(0,0,0,.3); }
+    .btn-dark:hover { background: var(--navy-700); transform: translateY(-2px); }
+    .btn-ghost:hover { background: rgba(255,255,255,.08); }
+    .about-card:hover, .step:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(15,38,71,.1); }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative; overflow: hidden; color: var(--white);
+    background:
+      radial-gradient(900px 600px at 80% 20%, rgba(61,143,214,.35), transparent 60%),
+      radial-gradient(700px 500px at 10% 90%, rgba(44,74,117,.6), transparent 60%),
+      linear-gradient(160deg, var(--navy-700), var(--navy-900));
+    min-height: 100vh; min-height: 100svh;
+    display: flex; align-items: center;
+    padding: calc(var(--header-h) + 24px) 0 48px;
+  }
+  .corner { position: absolute; width: 80px; height: 80px; border-color: rgba(255,255,255,.3); border-style: solid; pointer-events: none; }
+  .corner.tl { top: calc(var(--header-h) + 20px); left: 32px; border-width: 2px 0 0 2px; }
+  .corner.br { bottom: 32px; right: 32px; border-width: 0 2px 2px 0; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 40px; width: min(1160px, 100% - 48px); margin-inline: auto; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 5px 16px; border-radius: 999px; font-size: .9rem; font-weight: 500;
+    background: rgba(255,255,255,.1); color: #c9d8ec; border: 1px solid rgba(255,255,255,.14);
+  }
+  .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #6cc3ff; box-shadow: 0 0 0 4px rgba(108,195,255,.2); }
+  .hero h1 { font-size: clamp(2.8rem, 6.5vw, 5.2rem); font-weight: 700; line-height: 1.25; margin: 14px 0 4px; }
+  .hero .tagline { font-size: clamp(1.15rem, 2.2vw, 1.55rem); font-weight: 600; color: #dbe6f4; }
+  .hero p.lead { margin-top: 14px; color: #b6c6dc; font-size: 1.05rem; max-width: 520px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; color: #9fb3cf; font-size: .9rem; }
+  .meta span { display: inline-flex; align-items: center; gap: 6px; }
+  .meta svg { width: 16px; height: 16px; opacity: .8; }
+
+  /* phones scale with viewport height so the hero always fits a laptop screen */
+  .hero-phones {
+    --ph: clamp(340px, calc(100svh - var(--header-h) - 110px), 580px);
+    position: relative; height: var(--ph); width: calc(var(--ph) * .82); justify-self: center;
+  }
+  .phone {
+    position: absolute; width: calc(var(--ph) * .5); border-radius: calc(var(--ph) * .05); overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,.45);
+  }
+  .phone.p1 { right: 0; top: 0; transform: rotate(-4deg); z-index: 2; }
+  .phone.p2 { left: 0; bottom: 0; transform: rotate(5deg); }
+
+  /* ---------- Sections ---------- */
+  section { padding: 88px 0; }
+  .section-head { text-align: center; max-width: 660px; margin: 0 auto 48px; }
+  .section-head .num { color: var(--muted); font-weight: 600; font-size: .95rem; }
+  .section-head h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); font-weight: 700; line-height: 1.45; margin: 4px 0 10px; }
+  .section-head p { color: var(--muted); font-size: 1.05rem; }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .about-card, .step {
+    background: var(--white); border-radius: var(--radius); padding: 28px 26px;
+    box-shadow: 0 8px 24px rgba(15,38,71,.06); transition: transform .2s, box-shadow .2s;
+  }
+  .about-card .ic {
+    width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center;
+    background: var(--navy-800); color: var(--white); margin-bottom: 14px;
+  }
+  .about-card .ic svg { width: 26px; height: 26px; }
+  .about-card h3 { font-size: 1.15rem; margin-bottom: 6px; }
+  .about-card p { color: var(--muted); font-size: .97rem; }
+
+  /* Developers */
+  .devs {
+    margin-top: 20px; border-radius: var(--radius); padding: 30px 32px;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    color: var(--white);
+    background:
+      radial-gradient(500px 260px at 0% 0%, rgba(61,143,214,.35), transparent 70%),
+      linear-gradient(150deg, var(--navy-700), var(--navy-900));
+    box-shadow: 0 14px 34px rgba(15,38,71,.18);
+  }
+  .devs-text .label { display: inline-flex; align-items: center; gap: 8px; color: #9fb3cf; font-size: .9rem; font-weight: 600; }
+  .devs-text .label svg { width: 18px; height: 18px; }
+  .devs-text h3 { font-size: 1.35rem; margin: 2px 0 4px; }
+  .devs-text p { color: #b6c6dc; font-size: .97rem; }
+  .dev-list { display: flex; gap: 14px; flex-wrap: wrap; }
+  .dev {
+    display: flex; align-items: center; gap: 12px;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+    border-radius: 18px; padding: 10px 18px 10px 14px; min-width: 200px;
+  }
+  .dev .av {
+    width: 46px; height: 46px; border-radius: 14px; flex: none; display: grid; place-items: center;
+    background: var(--white); color: var(--navy-800); font-weight: 700; font-size: 1.25rem;
+  }
+  .dev b { display: block; font-size: 1.05rem; line-height: 1.5; }
+  .dev small { color: #9fb3cf; font-size: .85rem; }
+
+  /* Features (alternating) */
+  .features { background: var(--white); }
+  .feature {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+    padding: 32px 0;
+  }
+  .feature + .feature { border-top: 1px solid var(--ice); }
+  .feature:nth-child(even) .feature-img { order: -1; }
+  .feature-img {
+    /* never taller than the viewport on short laptop screens */
+    width: min(320px, calc((100vh - 160px) * .5625)); min-width: 220px;
+    border-radius: 26px; overflow: hidden; justify-self: center;
+    box-shadow: 0 22px 50px rgba(15,38,71,.18);
+  }
+  .feature .tag { display: inline-block; font-size: .85rem; font-weight: 600; color: var(--navy-500); background: var(--ice); padding: 3px 14px; border-radius: 999px; }
+  .feature h3 { font-size: clamp(1.5rem, 2.8vw, 2.1rem); line-height: 1.45; margin: 10px 0 8px; }
+  .feature p { color: var(--muted); font-size: 1.05rem; }
+  .feature ul { list-style: none; margin-top: 14px; display: grid; gap: 8px; }
+  .feature li { display: flex; gap: 10px; align-items: flex-start; }
+  .feature li::before {
+    content: ""; flex: none; width: 20px; height: 20px; margin-top: 6px; border-radius: 50%;
+    background: var(--navy-800) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/12px no-repeat;
+  }
+
+  /* Gallery */
+  .gallery { overflow: hidden; padding-bottom: 56px; }
+  .shots {
+    display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory;
+    padding: 10px max(24px, calc((100% - 1160px) / 2)) 26px; scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+  .shots img {
+    flex: none; width: 230px; border-radius: 22px; scroll-snap-align: center;
+    box-shadow: 0 14px 34px rgba(15,38,71,.16);
+  }
+
+  /* Install */
+  .install-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: step; }
+  .step::before {
+    counter-increment: step; content: counter(step, persian);
+    display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px;
+    background: var(--navy-800); color: var(--white); font-weight: 700; font-size: 1.2rem; margin-bottom: 14px;
+  }
+  .step h3 { font-size: 1.1rem; margin-bottom: 6px; }
+  .step p { color: var(--muted); font-size: .96rem; }
+  .note {
+    margin-top: 22px; display: flex; gap: 12px; align-items: flex-start;
+    background: var(--ice-2); border-radius: 18px; padding: 16px 20px; color: var(--navy-700); font-size: .95rem;
+  }
+  .note svg { width: 22px; height: 22px; flex: none; margin-top: 4px; }
+
+  /* Final CTA */
+  .final {
+    color: var(--white); text-align: center; position: relative; overflow: hidden;
+    background:
+      radial-gradient(700px 400px at 50% 0%, rgba(108,195,255,.35), transparent 70%),
+      linear-gradient(160deg, #3d8fd6, #2a6fb3);
+  }
+  .final img.logo { width: 92px; height: 92px; border-radius: 26px; margin: 0 auto 18px; box-shadow: 0 16px 36px rgba(0,0,0,.25); }
+  .final h2 { font-size: clamp(1.8rem, 4.2vw, 2.9rem); color: var(--navy-900); line-height: 1.4; }
+  .final p { color: #e7f1fb; font-size: 1.1rem; margin: 6px 0 26px; }
+  .final .meta { justify-content: center; color: #e1ecf8; }
+
+  footer { background: var(--navy-900); color: #8ea3c0; padding: 26px 0 calc(26px + var(--safe-b)); font-size: .9rem; }
+  footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px 24px; }
+  footer .brand { font-size: 1rem; }
+  footer .brand img { width: 30px; height: 30px; border-radius: 9px; }
+  footer .credit b { color: #d5e1f0; font-weight: 600; }
+
+  /* Mobile sticky download bar */
+  .sticky-dl {
+    position: fixed; inset: auto 0 0 0; z-index: 60; display: none;
+    padding: 10px 16px calc(10px + var(--safe-b));
+    background: rgba(255,255,255,.94); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+    box-shadow: 0 -8px 24px rgba(15,38,71,.12);
+    transform: translateY(110%); transition: transform .3s ease;
+    align-items: center; gap: 12px;
+  }
+  .sticky-dl.show { transform: none; }
+  .sticky-dl img { width: 42px; height: 42px; border-radius: 12px; flex: none; }
+  .sticky-dl .info { flex: 1; min-width: 0; line-height: 1.5; }
+  .sticky-dl .info b { display: block; font-size: 1rem; }
+  .sticky-dl .info small { color: var(--muted); font-size: .8rem; }
+  .sticky-dl .btn { padding: 10px 18px; font-size: .95rem; }
+  .sticky-dl .btn svg { width: 18px; height: 18px; }
+
+  /* Toast */
+  .toast {
+    position: fixed; bottom: calc(24px + var(--safe-b)); left: 50%; transform: translate(-50%, 160%);
+    background: var(--navy-800); color: var(--white); padding: 13px 22px; border-radius: 16px;
+    box-shadow: 0 14px 34px rgba(0,0,0,.3); font-size: .95rem; z-index: 100;
+    transition: transform .35s cubic-bezier(.2,.9,.3,1.2); width: max-content; max-width: calc(100% - 32px); text-align: center;
+  }
+  .toast.show { transform: translate(-50%, 0); }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s, transform .7s; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+    .sticky-dl, .toast { transition: none; }
+  }
+
+  /* ---------- Laptop: short screens (e.g. 1366x768, 1280x720) ---------- */
+  @media (min-width: 921px) and (max-height: 820px) {
+    section { padding: 72px 0; }
+    .section-head { margin-bottom: 36px; }
+    .hero h1 { font-size: clamp(2.8rem, 5.5vw, 4.4rem); }
+    .feature { padding: 24px 0; }
+  }
+
+  /* ---------- Tablet & phone ---------- */
+  @media (max-width: 920px) {
+    :root { --header-h: 64px; }
+    .wrap, .hero-grid { width: min(100% - 32px, 640px); }
+    .nav-links { display: none; }
+    .brand img { width: 36px; height: 36px; }
+    .hero { min-height: 0; padding-bottom: 40px; }
+    .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 28px; }
+    .hero p.lead { margin-inline: auto; }
+    .cta-row, .meta { justify-content: center; }
+    .hero-phones { --ph: min(420px, 108vw); }
+    .corner { display: none; }
+    section { padding: 64px 0; }
+    .section-head { margin-bottom: 32px; }
+    .about-grid, .install-grid { grid-template-columns: 1fr; gap: 14px; }
+    .about-card { display: grid; grid-template-columns: auto 1fr; column-gap: 16px; padding: 20px; }
+    .about-card .ic { grid-row: span 2; margin: 0; }
+    .about-card h3 { margin: 0; }
+    .step { padding: 22px 20px; display: grid; grid-template-columns: auto 1fr; column-gap: 16px; }
+    .step::before { grid-row: span 2; margin: 0; }
+    .devs { flex-direction: column; align-items: stretch; text-align: center; padding: 26px 20px; }
+    .dev-list { justify-content: center; }
+    .dev { flex: 1 1 200px; }
+    .feature { grid-template-columns: 1fr; gap: 24px; text-align: center; padding: 28px 0; }
+    .feature:nth-child(even) .feature-img { order: 0; }
+    .feature-img { width: min(260px, 72vw); min-width: 0; border-radius: 22px; }
+    .feature ul { justify-content: center; text-align: right; }
+    /* the six screens are already shown in the features list on phones */
+    .gallery, .nav-gallery { display: none; }
+    .sticky-dl { display: flex; }
+    body.has-sticky .toast { bottom: calc(86px + var(--safe-b)); }
+    footer { padding-bottom: calc(90px + var(--safe-b)); }
+    footer .wrap { flex-direction: column; text-align: center; }
+  }
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 2.9rem; }
+    .hero p.lead { font-size: 1rem; }
+    .cta-row { flex-direction: column; }
+    .cta-row .btn, .final .btn { width: 100%; }
+    .meta { gap: 6px 16px; font-size: .85rem; }
+    .header-dl span { display: none; }
+    .header-dl { padding: 8px 12px; }
+    .dev { min-width: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ======== Header ======== -->
+<header class="top" id="top">
+  <div class="wrap nav">
+    <a href="#" class="brand"><img src="assets/img/logo-64.png" width="40" height="40" alt="لوگوی دیدگاه">دیدگاه</a>
+    <nav class="nav-links">
+      <a href="#about">درباره</a>
+      <a href="#features">امکانات</a>
+      <a href="#gallery" class="nav-gallery">تصاویر</a>
+      <a href="#install">راهنمای نصب</a>
+    </nav>
+    <a class="btn btn-small header-dl js-download" href="Didgah.apk" download="Didgah.apk" aria-label="دانلود APK">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+      <span>دانلود</span>
+    </a>
+  </div>
+</header>
+
+<!-- ======== Hero ======== -->
+<section class="hero">
+  <span class="corner tl"></span><span class="corner br"></span>
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow">نسخه‌ی ۱٫۱ برای اندروید</span>
+      <h1>دیدگاه</h1>
+      <div class="tagline">کلاس تفکر و سواد رسانه‌ای</div>
+      <p class="lead">
+        فعالیت هفتگی کلاس، ارسال کار گروهی با عکس و ویدیو، نمره و بازخورد استاد و گفتگو، همه در یک اپلیکیشن ساده.
+      </p>
+      <div class="cta-row" id="hero-cta">
+        <a class="btn btn-primary js-download" href="Didgah.apk" download="Didgah.apk">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 9.48l1.84-3.18a.38.38 0 00-.66-.38l-1.86 3.22A11.4 11.4 0 0012 8.1c-1.77 0-3.43.38-4.92 1.04L5.22 5.92a.38.38 0 00-.66.38L6.4 9.48A10.8 10.8 0 001 18h22a10.8 10.8 0 00-5.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"/></svg>
+          دانلود مستقیم APK
+        </a>
+        <a class="btn btn-ghost" href="#install">راهنمای نصب</a>
+      </div>
+      <div class="meta">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg>نسخه ۱٫۱</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>حجم ۱۳٫۲ مگابایت</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>اندروید ۸ و بالاتر</span>
+      </div>
+    </div>
+    <div class="hero-phones" aria-hidden="true">
+      <div class="phone p2"><img src="assets/img/showcase-540.webp" srcset="assets/img/showcase-540.webp 540w, assets/img/showcase.webp 1080w" sizes="(max-width: 920px) 54vw, 290px" width="540" height="960" alt="" fetchpriority="high"></div>
+      <div class="phone p1"><img src="assets/img/home-540.webp" srcset="assets/img/home-540.webp 540w, assets/img/home.webp 1080w" sizes="(max-width: 920px) 54vw, 290px" width="540" height="960" alt="" fetchpriority="high"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== About ======== -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">دیدگاه چیست؟</div>
+      <h2>خبر را ببین، بسنج، تحلیل کن</h2>
+      <p>دیدگاه همراه کلاس تفکر و سواد رسانه‌ای است؛ جایی که دانش‌آموزان هر هفته در قالب گروه، یک پدیده‌ی رسانه‌ای را بررسی می‌کنند و نتیجه را برای استاد می‌فرستند.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <h3>تفکر انتقادی</h3>
+        <p>با فعالیت‌های واقعی مثل مقایسه‌ی تیترها، ردیابی منبع تصویر و شناسایی خبر جعلی.</p>
+      </div>
+      <div class="about-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0113 0"/><path d="M16 4.5a3.5 3.5 0 010 7M21.5 20a6.5 6.5 0 00-4-6"/></svg></div>
+        <h3>کار گروهی</h3>
+        <p>هر گروه کار مشترکش را یک‌جا ثبت می‌کند و نمره و بازخورد را با هم می‌بیند.</p>
+      </div>
+      <div class="about-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/></svg></div>
+        <h3>ارتباط با استاد</h3>
+        <p>گفتگوی خصوصی با استاد و امکان ارسال انتقاد و پیشنهاد به صورت ناشناس.</p>
+      </div>
+    </div>
+
+    <div class="devs reveal" id="developers">
+      <div class="devs-text">
+        <span class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg>برنامه‌نویسان</span>
+        <h3>سازندگان دیدگاه</h3>
+        <p>دیدگاه توسط نیما جانی و ایلیا باستانی طراحی و برنامه‌نویسی شده است.</p>
+      </div>
+      <div class="dev-list">
+        <div class="dev"><span class="av">ن</span><div><b>نیما جانی</b><small>برنامه‌نویس</small></div></div>
+        <div class="dev"><span class="av">ا</span><div><b>ایلیا باستانی</b><small>برنامه‌نویس</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== Features ======== -->
+<section class="features" id="features">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">امکانات</div>
+      <h2>هر چه کلاس لازم دارد</h2>
+      <p>شش بخش اصلی دیدگاه، از دیدن تکلیف تا گرفتن نمره.</p>
+    </div>
+
+    <div class="feature reveal">
+      <div>
+        <span class="tag">۰۱ — خانه</span>
+        <h3>فعالیت هر هفته</h3>
+        <p>تکلیف، مهلت و گروهت را یک‌جا ببین.</p>
+        <ul>
+          <li>نمایش فعالیت این هفته با شمارش معکوس مهلت</li>
+          <li>دسترسی سریع به گروه و اعضای آن</li>
+          <li>آخرین نمره و بازخورد گروه در صفحه‌ی اول</li>
+        </ul>
+      </div>
+      <div class="feature-img"><img src="assets/img/home-540.webp" srcset="assets/img/home-540.webp 540w, assets/img/home.webp 1080w" sizes="(max-width: 920px) 72vw, 320px" width="540" height="960" alt="صفحه‌ی خانه‌ی دیدگاه" loading="lazy" decoding="async"></div>
+    </div>
+
+    <div class="feature reveal">
+      <div>
+        <span class="tag">۰۲ — ارسال کار</span>
+        <h3>عکس و ویدیو</h3>
+        <p>کار گروه را مستقیم برای استاد بفرست.</p>
+        <ul>
+          <li>افزودن چند عکس و ویدیو به هر فعالیت</li>
+          <li>نمایش وضعیت و پیشرفت بارگذاری</li>
+          <li>توضیحات اختیاری کنار فایل‌ها</li>
+        </ul>
+      </div>
+      <div class="feature-img"><img src="assets/img/submit-540.webp" srcset="assets/img/submit-540.webp 540w, assets/img/submit.webp 1080w" sizes="(max-width: 920px) 72vw, 320px" width="540" height="960" alt="صفحه‌ی ارسال کار" loading="lazy" decoding="async"></div>
+    </div>
+
+    <div class="feature reveal">
+      <div>
+        <span class="tag">۰۳ — ویترین</span>
+        <h3>ویترین کلاس</h3>
+        <p>کارهای همه‌ی گروه‌ها و کلاس‌ها را ببین و از هم یاد بگیرید.</p>
+        <ul>
+          <li>فیلتر بر اساس کلاس</li>
+          <li>مشاهده‌ی عکس‌ها و پخش ویدیوها</li>
+        </ul>
+      </div>
+      <div class="feature-img"><img src="assets/img/showcase-540.webp" srcset="assets/img/showcase-540.webp 540w, assets/img/showcase.webp 1080w" sizes="(max-width: 920px) 72vw, 320px" width="540" height="960" alt="ویترین کلاس" loading="lazy" decoding="async"></div>
+    </div>
+
+    <div class="feature reveal">
+      <div>
+        <span class="tag">۰۴ — گروه من</span>
+        <h3>گروه و نمرات</h3>
+        <p>نمره و بازخورد هر فعالیت، همراه با میانگین گروه.</p>
+        <ul>
+          <li>فهرست اعضا و سرگروه</li>
+          <li>نمره‌ی حرفی و بازخورد متنی استاد</li>
+          <li>وضعیت کارهای در انتظار نمره</li>
+        </ul>
+      </div>
+      <div class="feature-img"><img src="assets/img/group-540.webp" srcset="assets/img/group-540.webp 540w, assets/img/group.webp 1080w" sizes="(max-width: 920px) 72vw, 320px" width="540" height="960" alt="صفحه‌ی گروه و نمرات" loading="lazy" decoding="async"></div>
+    </div>
+
+    <div class="feature reveal">
+      <div>
+        <span class="tag">۰۵ — گفتگو</span>
+        <h3>گفتگو با استاد</h3>
+        <p>گفتگوی خصوصی و متنی، با نمایش وضعیت ارسال و خوانده شدن پیام.</p>
+      </div>
+      <div class="feature-img"><img src="assets/img/chat-540.webp" srcset="assets/img/chat-540.webp 540w, assets/img/chat.webp 1080w" sizes="(max-width: 920px) 72vw, 320px" width="540" height="960" alt="گفتگو با استاد" loading="lazy" decoding="async"></div>
+    </div>
+
+    <div class="feature reveal">
+      <div>
+        <span class="tag">۰۶ — انتقاد و پیشنهاد</span>
+        <h3>پیام ناشناس</h3>
+        <p>نظرت را بدون نمایش نام بفرست. استاد فقط متن را می‌بیند.</p>
+      </div>
+      <div class="feature-img"><img src="assets/img/anonymous-540.webp" srcset="assets/img/anonymous-540.webp 540w, assets/img/anonymous.webp 1080w" sizes="(max-width: 920px) 72vw, 320px" width="540" height="960" alt="ارسال پیام ناشناس" loading="lazy" decoding="async"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== Gallery (laptop/desktop only) ======== -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">تصاویر</div>
+      <h2>نگاهی به اپلیکیشن</h2>
+    </div>
+  </div>
+  <div class="shots">
+    <img src="assets/img/home-540.webp" width="540" height="960" alt="خانه" loading="lazy" decoding="async">
+    <img src="assets/img/submit-540.webp" width="540" height="960" alt="ارسال کار" loading="lazy" decoding="async">
+    <img src="assets/img/showcase-540.webp" width="540" height="960" alt="ویترین" loading="lazy" decoding="async">
+    <img src="assets/img/group-540.webp" width="540" height="960" alt="گروه و نمرات" loading="lazy" decoding="async">
+    <img src="assets/img/chat-540.webp" width="540" height="960" alt="گفتگو" loading="lazy" decoding="async">
+    <img src="assets/img/anonymous-540.webp" width="540" height="960" alt="پیام ناشناس" loading="lazy" decoding="async">
+  </div>
+</section>
+
+<!-- ======== Install ======== -->
+<section id="install">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="num">راهنمای نصب</div>
+      <h2>نصب در سه قدم</h2>
+      <p>دیدگاه به صورت مستقیم (فایل APK) منتشر می‌شود.</p>
+    </div>
+    <div class="install-grid">
+      <div class="step reveal">
+        <h3>دانلود فایل</h3>
+        <p>روی دکمه‌ی «دانلود» بزنید تا فایل <b>Didgah.apk</b> در پوشه‌ی دانلودهای گوشی ذخیره شود.</p>
+      </div>
+      <div class="step reveal">
+        <h3>اجازه‌ی نصب</h3>
+        <p>فایل را باز کنید. اگر پیام «نصب از منابع ناشناس» آمد، به تنظیمات بروید و برای مرورگر یا مدیر فایل اجازه‌ی نصب را فعال کنید.</p>
+      </div>
+      <div class="step reveal">
+        <h3>نصب و ورود</h3>
+        <p>«نصب» را بزنید، اپ را باز کنید و با نام کاربری و رمزی که از مدرسه گرفته‌اید وارد شوید.</p>
+      </div>
+    </div>
+    <div class="note reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
+      <div>دیدگاه روی اندروید ۸ و بالاتر اجرا می‌شود. نسخه‌ی iOS در حال حاضر وجود ندارد. اگر نسخه‌ی قبلی را نصب دارید، نسخه‌ی جدید روی آن نصب می‌شود و اطلاعات شما حفظ می‌شود.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== Final CTA ======== -->
+<section class="final" id="final">
+  <div class="wrap reveal">
+    <img class="logo" src="assets/img/logo-192.png" width="92" height="92" alt="لوگوی دیدگاه" loading="lazy">
+    <h2>همین حالا دیدگاه را نصب کن</h2>
+    <p>رایگان، سبک و مخصوص کلاس شما</p>
+    <a class="btn btn-dark js-download" href="Didgah.apk" download="Didgah.apk">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+      دانلود APK
+    </a>
+    <div class="meta">
+      <span>نسخه ۱٫۱</span><span>·</span><span>۱۳٫۲ مگابایت</span><span>·</span><span>اندروید ۸+</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="#" class="brand"><img src="assets/img/logo-64.png" width="30" height="30" alt="" loading="lazy">دیدگاه</a>
+    <div class="credit">طراحی و برنامه‌نویسی: <b>نیما جانی</b> و <b>ایلیا باستانی</b></div>
+  </div>
+</footer>
+
+<!-- Mobile sticky download bar -->
+<div class="sticky-dl" id="sticky-dl" aria-hidden="true">
+  <img src="assets/img/logo-64.png" width="42" height="42" alt="">
+  <div class="info"><b>دیدگاه</b><small>نسخه ۱٫۱ · ۱۳٫۲ مگابایت</small></div>
+  <a class="btn btn-dark js-download" href="Didgah.apk" download="Didgah.apk" tabindex="-1">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+    دانلود
+  </a>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+  // Header background on scroll
+  const header = document.getElementById('top');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Mobile sticky bar: visible once the hero buttons scroll away, hidden at the final CTA
+  const bar = document.getElementById('sticky-dl');
+  const seen = { hero: true, final: false };
+  const updateBar = () => {
+    const show = !seen.hero && !seen.final;
+    bar.classList.toggle('show', show);
+    bar.setAttribute('aria-hidden', String(!show));
+    document.body.classList.toggle('has-sticky', show);
+  };
+  const barIO = new IntersectionObserver(entries => {
+    entries.forEach(e => { seen[e.target.id === 'hero-cta' ? 'hero' : 'final'] = e.isIntersecting; });
+    updateBar();
+  });
+  barIO.observe(document.getElementById('hero-cta'));
+  barIO.observe(document.getElementById('final'));
+
+  // Download feedback
+  const toast = document.getElementById('toast');
+  let t;
+  document.querySelectorAll('.js-download').forEach(a => a.addEventListener('click', () => {
+    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    toast.textContent = isIOS
+      ? 'دیدگاه فقط برای اندروید است. فایل را روی گوشی اندرویدی دانلود کنید.'
+      : 'دانلود شروع شد. پس از پایان، فایل Didgah.apk را باز کنید.';
+    toast.classList.add('show');
+    clearTimeout(t);
+    t = setTimeout(() => toast.classList.remove('show'), 4500);
+  }));
+</script>
+</body>
+</html>
