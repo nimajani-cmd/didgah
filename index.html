@@ -260,12 +260,14 @@
 
   /* Toast */
   .toast {
-    position: fixed; bottom: calc(24px + var(--safe-b)); left: 50%; transform: translate(-50%, 160%);
+    position: fixed; bottom: calc(24px + var(--safe-b)); left: 50%; transform: translate(-50%, 24px);
     background: var(--navy-800); color: var(--white); padding: 13px 22px; border-radius: 16px;
     box-shadow: 0 14px 34px rgba(0,0,0,.3); font-size: .95rem; z-index: 100;
-    transition: transform .35s cubic-bezier(.2,.9,.3,1.2); width: max-content; max-width: calc(100% - 32px); text-align: center;
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transition: transform .35s cubic-bezier(.2,.9,.3,1.2), opacity .25s, visibility 0s linear .35s;
+    width: max-content; max-width: calc(100% - 32px); text-align: center;
   }
-  .toast.show { transform: translate(-50%, 0); }
+  .toast.show { transform: translate(-50%, 0); opacity: 1; visibility: visible; transition: transform .35s cubic-bezier(.2,.9,.3,1.2), opacity .25s, visibility 0s; }
 
   /* Reveal */
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s, transform .7s; }
@@ -562,7 +564,7 @@
       دانلود APK
     </a>
     <div class="meta">
-      <span>نسخه ۱٫۱</span><span>·</span><span>۱۳٫۲ مگابایت</span><span>·</span><span>اندروید ۸+</span>
+      <span>نسخه ۱٫۱</span><span>|</span><span>۱۳٫۲ مگابایت</span><span>|</span><span>اندروید ۸+</span>
     </div>
   </div>
 </section>
@@ -577,7 +579,7 @@
 <!-- Mobile sticky download bar -->
 <div class="sticky-dl" id="sticky-dl" aria-hidden="true">
   <img src="assets/img/logo-64.png" width="42" height="42" alt="">
-  <div class="info"><b>دیدگاه</b><small>نسخه ۱٫۱ · ۱۳٫۲ مگابایت</small></div>
+  <div class="info"><b>دیدگاه</b><small>نسخه ۱٫۱، حجم ۱۳٫۲ مگابایت</small></div>
   <a class="btn btn-dark js-download" href="Didgah.apk" download="Didgah.apk" tabindex="-1">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
     دانلود
