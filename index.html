@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>دیدگاه | دانلود اپلیکیشن کلاس تفکر و سواد رسانه‌ای</title>
-<meta name="description" content="دانلود اپلیکیشن دیدگاه (Didgah) برای اندروید؛ اپ کلاس تفکر و سواد رسانه‌ای با فعالیت هفتگی، ارسال عکس و ویدیو، ویترین کلاس، نمرات گروه و گفتگو با استاد.">
+<meta name="description" content="دانلود اپلیکیشن دیدگاه (Didgah) برای اندروید و نسخه‌ی PWA برای آیفون؛ اپ کلاس تفکر و سواد رسانه‌ای با فعالیت هفتگی، ارسال عکس و ویدیو، ویترین کلاس، نمرات گروه و گفتگو با استاد.">
 <meta name="author" content="نیما جانی، ایلیا باستانی">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://nimajani-cmd.github.io/didgah/">
@@ -37,7 +37,7 @@
       "description": "اپلیکیشن کلاس تفکر و سواد رسانه‌ای با فعالیت هفتگی، ارسال عکس و ویدیو، ویترین کلاس، نمرات گروه و گفتگو با استاد.",
       "url": "https://nimajani-cmd.github.io/didgah/",
       "applicationCategory": "EducationalApplication",
-      "operatingSystem": "Android 8.0+",
+      "operatingSystem": "Android 8.0+, iOS",
       "softwareVersion": "1.1",
       "downloadUrl": "https://nimajani-cmd.github.io/didgah/Didgah.apk",
       "image": "https://nimajani-cmd.github.io/didgah/assets/img/logo-192.png",
@@ -112,6 +112,9 @@
   .btn-small svg { width: 18px; height: 18px; }
   .btn-primary { padding: 15px 30px; font-size: 1.1rem; background: var(--white); color: var(--navy-800); box-shadow: 0 12px 30px rgba(0,0,0,.25); }
   .btn-dark { padding: 15px 30px; font-size: 1.1rem; background: var(--navy-800); color: var(--white); box-shadow: 0 12px 30px rgba(15,38,71,.3); }
+  .btn-ios { padding: 14px 26px; font-size: 1.05rem; color: var(--white); border: 1.5px solid rgba(255,255,255,.55); background: rgba(255,255,255,.1); }
+  .is-ios .btn-ios { background: var(--white); color: var(--navy-800); }
+  .is-ios .only-android { display: none !important; }
   .btn-ghost { padding: 14px 26px; font-size: 1rem; color: var(--white); border: 1.5px solid rgba(255,255,255,.35); background: transparent; }
 
   @media (hover: hover) {
@@ -119,6 +122,8 @@
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(0,0,0,.3); }
     .btn-dark:hover { background: var(--navy-700); transform: translateY(-2px); }
     .btn-ghost:hover { background: rgba(255,255,255,.08); }
+    .btn-ios:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
+    .is-ios .btn-ios:hover { background: var(--white); }
     .about-card:hover, .step:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(15,38,71,.1); }
   }
 
@@ -147,6 +152,7 @@
   .hero .tagline { font-size: clamp(1.15rem, 2.2vw, 1.55rem); font-weight: 600; color: #dbe6f4; }
   .hero p.lead { margin-top: 14px; color: #b6c6dc; font-size: 1.05rem; max-width: 520px; }
   .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+  .guide-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: 6px; color: #c5d3e6; font-size: .95rem; text-decoration: underline; text-underline-offset: 5px; }
   .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; color: #9fb3cf; font-size: .9rem; }
   .meta span { display: inline-flex; align-items: center; gap: 6px; }
   .meta svg { width: 16px; height: 16px; opacity: .8; }
@@ -248,6 +254,10 @@
   }
 
   /* Install */
+  .install-groups { display: flex; flex-direction: column; gap: 34px; }
+  .is-ios #install-ios { order: -1; }
+  .install-title { display: flex; align-items: center; gap: 10px; font-size: 1.3rem; margin-bottom: 14px; }
+  .install-title svg { width: 24px; height: 24px; flex: none; color: var(--navy-500); }
   .install-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: step; }
   .step::before {
     counter-increment: step; content: counter(step, persian);
@@ -272,6 +282,7 @@
   .final img.logo { width: 92px; height: 92px; border-radius: 26px; margin: 0 auto 18px; box-shadow: 0 16px 36px rgba(0,0,0,.25); }
   .final h2 { font-size: clamp(1.8rem, 4.2vw, 2.9rem); color: var(--navy-900); line-height: 1.4; }
   .final p { color: #e7f1fb; font-size: 1.1rem; margin: 6px 0 26px; }
+  .final-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
   .final .meta { justify-content: center; color: #e1ecf8; }
 
   footer { background: var(--navy-900); color: #8ea3c0; padding: 26px 0 calc(26px + var(--safe-b)); font-size: .9rem; }
@@ -385,7 +396,7 @@
     </nav>
     <a class="btn btn-small header-dl js-download" href="Didgah.apk" download="Didgah.apk" aria-label="دانلود APK">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
-      <span>دانلود</span>
+      <span class="dl-label">دانلود</span>
     </a>
   </div>
 </header>
@@ -395,23 +406,27 @@
   <span class="corner tl"></span><span class="corner br"></span>
   <div class="hero-grid">
     <div>
-      <span class="eyebrow">نسخه‌ی ۱٫۱ برای اندروید</span>
+      <span class="eyebrow">برای اندروید و آیفون</span>
       <h1>دیدگاه</h1>
       <div class="tagline">کلاس تفکر و سواد رسانه‌ای</div>
       <p class="lead">
         فعالیت هفتگی کلاس، ارسال کار گروهی با عکس و ویدیو، نمره و بازخورد استاد و گفتگو، همه در یک اپلیکیشن ساده.
       </p>
       <div class="cta-row" id="hero-cta">
-        <a class="btn btn-primary js-download" href="Didgah.apk" download="Didgah.apk">
+        <a class="btn btn-primary js-download only-android" href="Didgah.apk" download="Didgah.apk">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 9.48l1.84-3.18a.38.38 0 00-.66-.38l-1.86 3.22A11.4 11.4 0 0012 8.1c-1.77 0-3.43.38-4.92 1.04L5.22 5.92a.38.38 0 00-.66.38L6.4 9.48A10.8 10.8 0 001 18h22a10.8 10.8 0 00-5.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"/></svg>
           دانلود مستقیم APK
         </a>
-        <a class="btn btn-ghost" href="#install">راهنمای نصب</a>
+        <a class="btn btn-ios" href="https://didgah-web.mahyar-447.workers.dev/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
+          نسخه‌ی PWA برای آیفون
+        </a>
       </div>
+      <a class="guide-link" href="#install">راهنمای نصب اندروید و آیفون</a>
       <div class="meta">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg>نسخه ۱٫۱</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>حجم ۱۵٫۷ مگابایت</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>اندروید ۸ و بالاتر</span>
+        <span class="only-android"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg>نسخه ۱٫۱</span>
+        <span class="only-android"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>حجم ۱۵٫۷ مگابایت</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>اندروید ۸ و بالاتر، و آیفون</span>
       </div>
     </div>
     <div class="hero-phones" aria-hidden="true">
@@ -569,25 +584,52 @@
     <div class="section-head reveal">
       <div class="num">راهنمای نصب</div>
       <h2>نصب در سه قدم</h2>
-      <p>دیدگاه به صورت مستقیم (فایل APK) منتشر می‌شود.</p>
+      <p>دیدگاه برای اندروید به صورت فایل APK و برای آیفون به صورت نسخه‌ی PWA در دسترس است.</p>
     </div>
-    <div class="install-grid">
-      <div class="step reveal">
-        <h3>دانلود فایل</h3>
-        <p>روی دکمه‌ی «دانلود» بزنید تا فایل <b>Didgah.apk</b> در پوشه‌ی دانلودهای گوشی ذخیره شود.</p>
+    <div class="install-groups">
+      <div id="install-android">
+        <h3 class="install-title reveal"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 9.48l1.84-3.18a.38.38 0 00-.66-.38l-1.86 3.22A11.4 11.4 0 0012 8.1c-1.77 0-3.43.38-4.92 1.04L5.22 5.92a.38.38 0 00-.66.38L6.4 9.48A10.8 10.8 0 001 18h22a10.8 10.8 0 00-5.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"/></svg>اندروید</h3>
+        <div class="install-grid">
+          <div class="step reveal">
+            <h3>دانلود فایل</h3>
+            <p>روی دکمه‌ی «دانلود» بزنید تا فایل <b>Didgah.apk</b> در پوشه‌ی دانلودهای گوشی ذخیره شود.</p>
+          </div>
+          <div class="step reveal">
+            <h3>اجازه‌ی نصب</h3>
+            <p>فایل را باز کنید. اگر پیام «نصب از منابع ناشناس» آمد، به تنظیمات بروید و برای مرورگر یا مدیر فایل اجازه‌ی نصب را فعال کنید.</p>
+          </div>
+          <div class="step reveal">
+            <h3>نصب و ورود</h3>
+            <p>«نصب» را بزنید، اپ را باز کنید و با نام کاربری و رمزی که از مدرسه گرفته‌اید وارد شوید.</p>
+          </div>
+        </div>
+        <div class="note reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
+          <div>دیدگاه روی اندروید ۸ و بالاتر اجرا می‌شود. اگر نسخه‌ی قبلی را نصب دارید و هنگام نصب پیام «برنامه نصب نشد» آمد، اول نسخه‌ی قبلی را حذف کنید، فایل جدید را نصب کنید و با همان نام کاربری وارد شوید.</div>
+        </div>
       </div>
-      <div class="step reveal">
-        <h3>اجازه‌ی نصب</h3>
-        <p>فایل را باز کنید. اگر پیام «نصب از منابع ناشناس» آمد، به تنظیمات بروید و برای مرورگر یا مدیر فایل اجازه‌ی نصب را فعال کنید.</p>
+
+      <div id="install-ios">
+        <h3 class="install-title reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>آیفون (PWA)</h3>
+        <div class="install-grid">
+          <div class="step reveal">
+            <h3>باز کردن در Safari</h3>
+            <p>روی دکمه‌ی «نسخه‌ی PWA برای آیفون» بزنید. لینک باید در مرورگر <b>Safari</b> باز شود، نه داخل تلگرام یا برنامه‌های دیگر.</p>
+          </div>
+          <div class="step reveal">
+            <h3>افزودن به صفحه‌ی اصلی</h3>
+            <p>در Safari گزینه‌ی <b>Share</b> (اشتراک‌گذاری) را بزنید و <b>Add to Home Screen</b> را انتخاب کنید. خود صفحه هم راهنمای این کار را نشان می‌دهد.</p>
+          </div>
+          <div class="step reveal">
+            <h3>اجرا و ورود</h3>
+            <p>برنامه را با آیکون <b>Didgah</b> از صفحه‌ی اصلی گوشی باز کنید و با نام کاربری و رمزی که از مدرسه گرفته‌اید وارد شوید.</p>
+          </div>
+        </div>
+        <div class="note reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
+          <div>نسخه‌ی آیفون نیازی به App Store ندارد و فقط بعد از افزودن به صفحه‌ی اصلی اجرا می‌شود. با همان حساب کاربری وارد می‌شوید و اطلاعاتتان با نسخه‌ی اندروید یکی است.</div>
+        </div>
       </div>
-      <div class="step reveal">
-        <h3>نصب و ورود</h3>
-        <p>«نصب» را بزنید، اپ را باز کنید و با نام کاربری و رمزی که از مدرسه گرفته‌اید وارد شوید.</p>
-      </div>
-    </div>
-    <div class="note reveal">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
-      <div>دیدگاه روی اندروید ۸ و بالاتر اجرا می‌شود. نسخه‌ی iOS در حال حاضر وجود ندارد. اگر نسخه‌ی قبلی دیدگاه را نصب دارید و هنگام نصب پیام «برنامه نصب نشد» آمد، اول نسخه‌ی قبلی را حذف کنید و دوباره فایل جدید را نصب کنید و با همان نام کاربری وارد شوید.</div>
     </div>
   </div>
 </section>
@@ -598,12 +640,18 @@
     <img class="logo" src="assets/img/logo-192.png" width="92" height="92" alt="لوگوی دیدگاه" loading="lazy">
     <h2>همین حالا دیدگاه را نصب کن</h2>
     <p>رایگان، سبک و مخصوص کلاس شما</p>
-    <a class="btn btn-dark js-download" href="Didgah.apk" download="Didgah.apk">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
-      دانلود APK
-    </a>
+    <div class="final-actions">
+      <a class="btn btn-dark js-download only-android" href="Didgah.apk" download="Didgah.apk">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+        دانلود APK برای اندروید
+      </a>
+      <a class="btn btn-primary" href="https://didgah-web.mahyar-447.workers.dev/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
+        نسخه‌ی PWA برای آیفون
+      </a>
+    </div>
     <div class="meta">
-      <span>نسخه ۱٫۱</span><span>|</span><span>۱۵٫۷ مگابایت</span><span>|</span><span>اندروید ۸+</span>
+      <span class="only-android">نسخه ۱٫۱</span><span class="only-android">|</span><span class="only-android">۱۵٫۷ مگابایت</span><span class="only-android">|</span><span>اندروید ۸+ و آیفون</span>
     </div>
   </div>
 </section>
@@ -618,16 +666,34 @@
 <!-- Mobile sticky download bar -->
 <div class="sticky-dl" id="sticky-dl" aria-hidden="true">
   <img src="assets/img/logo-64.png" width="42" height="42" alt="">
-  <div class="info"><b>دیدگاه</b><small>نسخه ۱٫۱، حجم ۱۵٫۷ مگابایت</small></div>
+  <div class="info"><b>دیدگاه</b><small id="sticky-sub">نسخه ۱٫۱، حجم ۱۵٫۷ مگابایت</small></div>
   <a class="btn btn-dark js-download" href="Didgah.apk" download="Didgah.apk" tabindex="-1">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
-    دانلود
+    <span class="dl-label">دانلود</span>
   </a>
 </div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
+  // iPhone and iPad can't install an APK: every generic download button opens the PWA instead.
+  const WEBAPP_URL = 'https://didgah-web.mahyar-447.workers.dev/';
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (isIOS) {
+    document.documentElement.classList.add('is-ios');
+    document.querySelectorAll('.js-download:not(.only-android)').forEach(a => {
+      a.href = WEBAPP_URL;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.removeAttribute('download');
+      a.classList.remove('js-download');
+      a.setAttribute('aria-label', 'باز کردن نسخه‌ی PWA برای آیفون');
+      a.querySelector('path').setAttribute('d', 'M14 4h6v6M20 4l-9 9M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5');
+      a.querySelector('.dl-label').textContent = 'باز کردن';
+    });
+    document.getElementById('sticky-sub').textContent = 'نسخه‌ی PWA برای آیفون';
+  }
+
   // Header background on scroll
   const header = document.getElementById('top');
   const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
@@ -660,10 +726,7 @@
   const toast = document.getElementById('toast');
   let t;
   document.querySelectorAll('.js-download').forEach(a => a.addEventListener('click', () => {
-    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-    toast.textContent = isIOS
-      ? 'دیدگاه فقط برای اندروید است. فایل را روی گوشی اندرویدی دانلود کنید.'
-      : 'دانلود شروع شد. پس از پایان، فایل Didgah.apk را باز کنید.';
+    toast.textContent = 'دانلود شروع شد. پس از پایان، فایل Didgah.apk را باز کنید.';
     toast.classList.add('show');
     clearTimeout(t);
     t = setTimeout(() => toast.classList.remove('show'), 4500);
