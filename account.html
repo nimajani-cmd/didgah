@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>نام کاربری و رمز | دیدگاه</title>
+<meta name="description" content="دانش‌آموزان کلاس تفکر و سواد رسانه‌ای: نام کاربری و رمز اپ دیدگاه را با کلاس و تاریخ تولد پیدا کنید.">
+<meta name="author" content="نیما جانی، ایلیا باستانی">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0f2647">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/img/logo-64.png">
+<link rel="apple-touch-icon" href="assets/img/logo-192.png">
+<link rel="preload" href="assets/fonts/estedad_regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/fonts/estedad_bold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="page-account">
+
+<!-- ======== Header ======== -->
+<header class="top" id="top">
+  <div class="wrap nav">
+    <a href="./" class="brand"><img src="assets/img/logo-64.png" width="40" height="40" alt="لوگوی دیدگاه">دیدگاه</a>
+    <nav class="nav-links">
+      <a href="./#about">درباره</a>
+      <a href="./#features">امکانات</a>
+      <a href="./#gallery" class="nav-gallery">تصاویر</a>
+      <a href="./#install">راهنمای نصب</a>
+      <a href="account.html" aria-current="page">نام کاربری</a>
+    </nav>
+    <a class="btn btn-small header-dl" href="Didgah.apk" download="Didgah.apk" aria-label="دانلود APK">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+      <span class="dl-label">دانلود</span>
+    </a>
+  </div>
+</header>
+
+<main class="account account-page" id="account">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="num">حساب کاربری</div>
+      <h2>نام کاربری و رمزت را پیدا کن</h2>
+      <p>کلاست را انتخاب کن و تاریخ تولدت را وارد کن.</p>
+    </div>
+    <div class="account-card" id="acc-card">
+      <form id="acc-form" novalidate>
+        <fieldset>
+          <legend>کلاس</legend>
+          <div class="acc-classes">
+            <label class="chip"><input type="radio" name="acc-class" value="r1"><span>دهم ریاضی یک</span></label>
+            <label class="chip"><input type="radio" name="acc-class" value="r2"><span>دهم ریاضی دو</span></label>
+            <label class="chip"><input type="radio" name="acc-class" value="t1"><span>دهم تجربی یک</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>تاریخ تولد</legend>
+          <div class="date-row">
+            <label><span>روز</span>
+              <select id="acc-d" required>
+                  <option value="" selected disabled>روز</option>
+                  <option value="1">۱</option>
+                  <option value="2">۲</option>
+                  <option value="3">۳</option>
+                  <option value="4">۴</option>
+                  <option value="5">۵</option>
+                  <option value="6">۶</option>
+                  <option value="7">۷</option>
+                  <option value="8">۸</option>
+                  <option value="9">۹</option>
+                  <option value="10">۱۰</option>
+                  <option value="11">۱۱</option>
+                  <option value="12">۱۲</option>
+                  <option value="13">۱۳</option>
+                  <option value="14">۱۴</option>
+                  <option value="15">۱۵</option>
+                  <option value="16">۱۶</option>
+                  <option value="17">۱۷</option>
+                  <option value="18">۱۸</option>
+                  <option value="19">۱۹</option>
+                  <option value="20">۲۰</option>
+                  <option value="21">۲۱</option>
+                  <option value="22">۲۲</option>
+                  <option value="23">۲۳</option>
+                  <option value="24">۲۴</option>
+                  <option value="25">۲۵</option>
+                  <option value="26">۲۶</option>
+                  <option value="27">۲۷</option>
+                  <option value="28">۲۸</option>
+                  <option value="29">۲۹</option>
+                  <option value="30">۳۰</option>
+                  <option value="31">۳۱</option>
+              </select>
+            </label>
+            <label><span>ماه</span>
+              <select id="acc-m" required>
+                  <option value="" selected disabled>ماه</option>
+                  <option value="1">فروردین</option>
+                  <option value="2">اردیبهشت</option>
+                  <option value="3">خرداد</option>
+                  <option value="4">تیر</option>
+                  <option value="5">مرداد</option>
+                  <option value="6">شهریور</option>
+                  <option value="7">مهر</option>
+                  <option value="8">آبان</option>
+                  <option value="9">آذر</option>
+                  <option value="10">دی</option>
+                  <option value="11">بهمن</option>
+                  <option value="12">اسفند</option>
+              </select>
+            </label>
+            <label><span>سال</span>
+              <select id="acc-y" required>
+                  <option value="1386">۱۳۸۶</option>
+                  <option value="1387">۱۳۸۷</option>
+                  <option value="1388">۱۳۸۸</option>
+                  <option value="1389" selected>۱۳۸۹</option>
+                  <option value="1390">۱۳۹۰</option>
+                  <option value="1391">۱۳۹۱</option>
+                  <option value="1392">۱۳۹۲</option>
+              </select>
+            </label>
+          </div>
+        </fieldset>
+        <button class="btn btn-dark acc-submit" type="submit" id="acc-submit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <span>نمایش نام کاربری</span>
+        </button>
+        <p class="acc-error" id="acc-error" role="alert" hidden></p>
+      </form>
+
+      <div class="acc-result" id="acc-result" hidden>
+        <div class="acc-class" id="acc-r-class"></div>
+        <div class="acc-name" id="acc-r-name"></div>
+        <div class="acc-cred">
+          <span>یوزرنیم و پسورد</span>
+          <b id="acc-r-user" dir="ltr"></b>
+          <button type="button" class="btn acc-copy" id="acc-copy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 012-2h9"/></svg>
+            <span>کپی</span>
+          </button>
+        </div>
+        <div class="acc-tip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>
+          <div>همین عدد را هم در «نام کاربری» و هم در «رمز عبور» وارد کن. بعد از ورود، از بخش <b>پروفایل</b> رمزت را عوض کن تا فقط خودت آن را بدانی.</div>
+        </div>
+        <button type="button" class="acc-again" id="acc-again">جستجوی دوباره</button>
+      </div>
+    </div>
+    <a class="back-link" href="./">بازگشت به صفحه‌ی اصلی</a>
+  </div>
+</main>
+
+
+<footer>
+  <div class="wrap">
+    <a href="./" class="brand"><img src="assets/img/logo-64.png" width="30" height="30" alt="" loading="lazy">دیدگاه</a>
+    <div class="credit">طراحی و برنامه‌نویسی: <b>نیما جانی</b> و <b>ایلیا باستانی</b></div>
+  </div>
+</footer>
+
+<script src="assets/js/account.js"></script>
+</body>
+</html>
