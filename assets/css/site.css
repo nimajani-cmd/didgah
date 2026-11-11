@@ -264,6 +264,18 @@ section { padding: 88px 0; }
 }
 .final img.logo { width: 92px; height: 92px; border-radius: 26px; margin: 0 auto 18px; box-shadow: 0 16px 36px rgba(0,0,0,.25); }
 .final h2 { font-size: clamp(1.8rem, 4.2vw, 2.9rem); color: var(--navy-900); line-height: 1.4; }
+.final-qr { display: none; }
+/* Laptop/desktop: content on the right, QR code on the left */
+@media (min-width: 921px) {
+  .final { text-align: right; }
+  .final-grid { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 56px; max-width: 980px; }
+  .final img.logo { margin: 0 0 18px; }
+  .final-grid .final-actions, .final-grid .meta { justify-content: flex-start; }
+  .final-qr { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .final-qr-tile { background: var(--white); border-radius: 28px; padding: 14px; box-shadow: 0 22px 50px rgba(11,29,56,.3); }
+  .final-qr-tile img { width: 220px; height: 220px; border-radius: 12px; }
+  .final-qr span { color: #e7f1fb; font-size: .95rem; font-weight: 600; }
+}
 .final p { color: #e7f1fb; font-size: 1.1rem; margin: 6px 0 26px; }
 .final-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 .final .meta { justify-content: center; color: #e1ecf8; }
