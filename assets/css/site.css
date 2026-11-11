@@ -318,7 +318,7 @@ footer .credit b { color: #d5e1f0; font-weight: 600; }
 
 /* ---------- Tablet & phone ---------- */
 @media (max-width: 920px) {
-  :root { --header-h: 108px; }
+  :root { --header-h: 100px; }
   .wrap, .hero-grid { width: min(100% - 32px, 640px); }
   .nav { flex-wrap: wrap; height: auto; padding-top: 10px; row-gap: 2px; }
   .nav-links {
@@ -327,6 +327,7 @@ footer .credit b { color: #d5e1f0; font-weight: 600; }
   }
   .nav-links a { display: inline-flex; align-items: center; min-height: 42px; padding: 0 4px; }
   .nav-links a.nav-gallery { display: none; }
+  .header-dl { display: none; }
   .nav-links { justify-content: space-around; }
   .hero-links { display: none; }
   .brand img { width: 36px; height: 36px; }
