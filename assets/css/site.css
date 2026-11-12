@@ -399,3 +399,41 @@ body.page-account { background: var(--white); }
 @media (max-width: 920px) {
   .account-page { padding-top: calc(var(--header-h) + 28px); }
 }
+
+/* ---------- Minimo guide ---------- */
+body.page-guide { background: var(--ice); }
+.guide-page { padding: calc(var(--header-h) + 44px) 0 72px; }
+.guide-page .section-head { margin-bottom: 28px; }
+.guide-video {
+  max-width: 920px; margin: 0 auto; border-radius: 26px; overflow: hidden; background: var(--navy-900);
+  box-shadow: 0 24px 54px rgba(15,38,71,.22); aspect-ratio: 16 / 9;
+}
+.guide-video video { display: block; width: 100%; height: 100%; object-fit: contain; background: var(--navy-900); }
+.guide-stores { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 26px 0 0; }
+.guide-stores .btn { padding: 12px 22px; font-size: 1rem; box-shadow: none; }
+.btn-light { background: var(--white); color: var(--navy-800); border: 1.5px solid var(--ice-2); }
+.guide-steps-title { text-align: center; font-size: 1.5rem; margin: 52px 0 20px; }
+.step-stat { display: inline-block; margin-top: 10px; font-size: .88rem; font-weight: 600; color: var(--navy-800); background: var(--ice); padding: 3px 12px; border-radius: 999px; }
+.guide-page .note { margin-top: 22px; }
+.guide-teaser {
+  display: flex; align-items: center; gap: 16px; margin-top: 34px; padding: 18px 22px; border-radius: var(--radius);
+  background: var(--navy-800); color: var(--white); box-shadow: 0 14px 34px rgba(15,38,71,.18);
+}
+.guide-teaser-ic { width: 48px; height: 48px; border-radius: 14px; flex: none; display: grid; place-items: center; background: rgba(255,255,255,.12); }
+.guide-teaser-ic svg { width: 24px; height: 24px; }
+.guide-teaser-text { flex: 1; min-width: 0; display: flex; flex-direction: column; line-height: 1.6; }
+.guide-teaser-text b { font-size: 1.05rem; }
+.guide-teaser-text small { color: #b6c6dc; font-size: .92rem; }
+.guide-teaser-arrow { width: 22px; height: 22px; flex: none; opacity: .8; }
+@media (hover: hover) { .guide-teaser:hover { background: var(--navy-700); } }
+@media (max-width: 920px) {
+  .guide-page { padding-top: calc(var(--header-h) + 28px); }
+  .guide-video { border-radius: 18px; }
+  .guide-steps-title { margin-top: 40px; }
+  .step-stat { grid-column: 2; justify-self: start; }
+}
+@media (max-width: 480px) {
+  .guide-stores { flex-direction: column; }
+  .guide-stores .btn { width: 100%; }
+  .guide-teaser { padding: 16px; gap: 12px; }
+}
