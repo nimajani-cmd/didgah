@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>سایت دیدگاه منتقل شد | تفکر و سواد رسانه‌ای</title>
+<meta name="description" content="سایت دانلود اپلیکیشن دیدگاه (تفکر و سواد رسانه‌ای) برای دسترسی بدون فیلترشکن به ابر آروان منتقل شد.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://didgah.s3-website.ir-central1.arvanstorage.ir/">
+<meta name="theme-color" content="#0f2647">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/img/logo-64.png">
+<link rel="apple-touch-icon" href="assets/img/logo-192.png">
+<link rel="preload" href="assets/fonts/estedad_regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/fonts/estedad_bold.ttf" as="font" type="font/ttf" crossorigin>
+<style>
+  @font-face { font-family: Estedad; src: url(assets/fonts/estedad_regular.ttf) format("truetype"); font-weight: 400; font-display: swap; }
+  @font-face { font-family: Estedad; src: url(assets/fonts/estedad_medium.ttf) format("truetype"); font-weight: 500; font-display: swap; }
+  @font-face { font-family: Estedad; src: url(assets/fonts/estedad_semibold.ttf) format("truetype"); font-weight: 600; font-display: swap; }
+  @font-face { font-family: Estedad; src: url(assets/fonts/estedad_bold.ttf) format("truetype"); font-weight: 700; font-display: swap; }
+
+  :root {
+    --navy-900: #0b1d38;
+    --navy-800: #0f2647;
+    --navy-700: #13305a;
+    --navy-500: #2c4a75;
+    --blue: #3d8fd6;
+    --ice: #e8edf4;
+    --ice-2: #d6dfea;
+    --text: #13294a;
+    --muted: #5d6f88;
+    --white: #ffffff;
+    --safe-b: env(safe-area-inset-bottom, 0px);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: Estedad, Tahoma, sans-serif;
+    color: var(--white);
+    background: var(--navy-900);
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 3px solid #6cc3ff; outline-offset: 3px; border-radius: 8px; }
+
+  .moved-page {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    background:
+      radial-gradient(900px 600px at 80% 18%, rgba(61,143,214,.35), transparent 60%),
+      radial-gradient(700px 500px at 10% 90%, rgba(44,74,117,.6), transparent 60%),
+      linear-gradient(160deg, var(--navy-700), var(--navy-900));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 28px 24px calc(26px + var(--safe-b));
+    overflow: hidden;
+  }
+
+  .corner {
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    border-color: rgba(255,255,255,.26);
+    border-style: solid;
+    pointer-events: none;
+  }
+  .corner.tl { top: 24px; left: 24px; border-width: 2px 0 0 2px; }
+  .corner.br { bottom: 24px; right: 24px; border-width: 0 2px 2px 0; }
+
+  .top-brand {
+    width: min(760px, 100%);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--white);
+  }
+  .brand svg {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.22);
+  }
+  .old-tag {
+    font-size: 12px;
+    color: #9fb3cf;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.12);
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+
+  .center-card {
+    width: min(720px, 100%);
+    margin: 28px auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: rgba(255,255,255,.1);
+    color: #c9d8ec;
+    border: 1px solid rgba(255,255,255,.15);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #6cc3ff;
+    box-shadow: 0 0 0 4px rgba(108,195,255,.22);
+  }
+
+  .center-card h1 {
+    font-size: clamp(2rem, 4.8vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 16px 0 10px;
+  }
+
+  .lead {
+    color: #b6c6dc;
+    font-size: 1.02rem;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  .reasons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 26px;
+    text-align: right;
+  }
+  .reason {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 20px;
+    padding: 16px;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+  .reason-ic {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: rgba(108,195,255,.16);
+    color: #8fd3ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .reason h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .reason p {
+    font-size: 0.82rem;
+    color: #b6c6dc;
+    line-height: 1.65;
+  }
+
+  .cta-panel {
+    margin-top: 26px;
+    background: var(--ice);
+    color: var(--text);
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: 0 24px 50px rgba(0,0,0,.32);
+  }
+  .new-url-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: var(--white);
+    border: 1px solid var(--ice-2);
+    border-radius: 14px;
+    padding: 10px 14px;
+    margin-bottom: 14px;
+    direction: ltr;
+  }
+  .new-url-text {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12.5px;
+    color: var(--navy-800);
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .url-badge {
+    flex: none;
+    background: #e3f3ff;
+    color: var(--navy-800);
+    font-family: Estedad, Tahoma, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+
+  .cta-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 0.96rem;
+    border-radius: 14px;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform .15s, box-shadow .2s, background .2s;
+  }
+  .btn:active { transform: scale(.98); }
+  .btn-dark {
+    background: var(--navy-800);
+    color: var(--white);
+    box-shadow: 0 10px 22px rgba(15,38,71,.24);
+  }
+  .btn-light {
+    background: var(--white);
+    color: var(--navy-800);
+    border: 1.5px solid var(--ice-2);
+  }
+  @media (hover: hover) {
+    .btn-dark:hover { background: var(--navy-700); transform: translateY(-2px); }
+    .btn-light:hover { background: #f5f8fc; }
+  }
+
+  .mci-note {
+    margin-top: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: right;
+    background: rgba(15,38,71,.07);
+    border: 1px solid rgba(15,38,71,.14);
+    border-radius: 14px;
+    padding: 11px 14px;
+    font-size: 12.5px;
+    line-height: 1.75;
+    color: var(--text);
+  }
+  .mci-note svg {
+    flex: none;
+    margin-top: 3px;
+    color: var(--navy-700);
+  }
+
+  .foot {
+    width: min(760px, 100%);
+    margin: 0 auto;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 12.5px;
+    color: #9fb3cf;
+    position: relative;
+    z-index: 2;
+  }
+  .foot b { color: var(--white); }
+
+  .toast {
+    position: fixed;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--navy-800);
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,.2);
+    padding: 10px 18px;
+    border-radius: 14px;
+    font-size: 13px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .2s;
+    z-index: 99;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  @media (max-width: 680px) {
+    .corner { display: none; }
+    .moved-page { padding: 20px 16px calc(22px + var(--safe-b)); }
+    .center-card { margin: 20px auto; }
+    .center-card h1 { font-size: 1.85rem; }
+    .lead { font-size: 0.92rem; }
+    .reasons { grid-template-columns: 1fr; gap: 10px; }
+    .cta-panel { padding: 16px; }
+    .cta-row { grid-template-columns: 1fr; }
+    .foot { flex-direction: column; align-items: center; text-align: center; }
+  }
+</style>
+</head>
+<body>
+  <div class="moved-page">
+    <span class="corner tl" aria-hidden="true"></span>
+    <span class="corner br" aria-hidden="true"></span>
+
+    <header class="top-brand">
+      <a class="brand" href="https://didgah.s3-website.ir-central1.arvanstorage.ir/">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 822 822" aria-hidden="true"><g transform="translate(-235 -211)"><path fill="#E8EDF3" d="M465,211L827,211A230,230 0 0 1,1057 441L1057,803A230,230 0 0 1,827 1033L465,1033A230,230 0 0 1,235 803L235,441A230,230 0 0 1,465 211Z"/><path fill="#0F2747" d="M400,410Q400,347 463,347L645,347A242,242 0 0 1,645 831L502,831L418,896Q400,906 400,885Z"/><path fill="#E8EDF3" d="M400,430L710,540A84,84 0 0 0,710 657L400,765Z"/><path fill="#0F2747" d="M400,472L548,530Q598,552 598,598Q598,644 548,666L400,722Z"/><path fill="#E8EDF3" d="M710,598A60,60 0,1 0,830 598A60,60 0,1 0,710 598Z"/></g></svg>
+        دیدگاه
+      </a>
+      <span class="old-tag">آدرس قبلی سایت</span>
+    </header>
+
+    <main class="center-card">
+      <span class="eyebrow">انتقال به سرور جدید</span>
+      <h1>سایت دیدگاه منتقل شد</h1>
+      <p class="lead">
+        به‌خاطر محدودیت دسترسی به GitHub در ایران و نیاز به فیلترشکن، سایت دانلود اپلیکیشن <b>دیدگاه</b> به سرورهای داخل کشور منتقل شد تا همیشه راحت و سریع به آخرین نسخه دسترسی داشته باشید.
+      </p>
+
+      <div class="reasons">
+        <div class="reason">
+          <div class="reason-ic" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3>بدون نیاز به VPN</h3>
+          <p>آدرس جدید با اینترنت ایران به‌طور مستقیم و بدون فیلترشکن باز می‌شود.</p>
+        </div>
+        <div class="reason">
+          <div class="reason-ic" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>سرعت دانلود بالاتر</h3>
+          <p>دانلود نسخه‌ی اندروید (APK) و دسترسی به نسخه‌ی آیفون خیلی سریع‌تر شده است.</p>
+        </div>
+        <div class="reason">
+          <div class="reason-ic" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>همیشه آخرین نسخه</h3>
+          <p>از این به بعد همه‌ی آپدیت‌های دیدگاه فقط در سایت جدید منتشر می‌شوند.</p>
+        </div>
+      </div>
+
+      <div class="cta-panel">
+        <div class="new-url-box">
+          <span class="new-url-text">https://didgah.s3-website.ir-central1.arvanstorage.ir/</span>
+          <span class="url-badge">آدرس جدید</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-dark" href="https://didgah.s3-website.ir-central1.arvanstorage.ir/">
+            ورود به سایت جدید دیدگاه
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </a>
+          <button class="btn btn-light" id="copyBtn" type="button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            کپی آدرس جدید
+          </button>
+        </div>
+        <div class="mci-note">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span><b>نکته درباره اینترنت همراه اول:</b> سایت جدید بدون VPN باز می‌شود؛ اما برای استفاده از خود اپلیکیشن دیدگاه (در هر دو نسخه‌ی اندروید و iOS) روی اینترنت <b>همراه اول</b>، لازم است با VPN وارد شوید.</span>
+        </div>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <span>کلاس تفکر و سواد رسانه‌ای</span>
+      <span>طراحی و برنامه‌نویسی: <b>نیما جانی</b> و <b>ایلیا باستانی</b></span>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">آدرس جدید کپی شد</div>
+
+  <script>
+    const toast = document.getElementById('toast');
+    let timer;
+    document.getElementById('copyBtn').addEventListener('click', () => {
+      const url = 'https://didgah.s3-website.ir-central1.arvanstorage.ir/';
+      if (navigator.clipboard?.writeText) {
+        navigator.clipboard.writeText(url).catch(() => {});
+      }
+      toast.classList.add('show');
+      clearTimeout(timer);
+      timer = setTimeout(() => toast.classList.remove('show'), 2500);
+    });
+  </script>
+</body>
+</html>

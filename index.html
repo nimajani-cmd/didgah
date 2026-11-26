@@ -3,408 +3,420 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>دیدگاه تفکر و سواد رسانه‌ای | دانلود اپلیکیشن دیدگاه</title>
-<meta name="google-site-verification" content="GLRPSpubLBwJvsp8vKx3-HXJK5Ts1EPQ73wanGBGa9o" />
-<meta name="description" content="دانلود اپلیکیشن دیدگاه تفکر و سواد رسانه‌ای (Didgah) برای اندروید و نسخه‌ی آیفون (PWA)؛ فعالیت هفتگی کلاس، ارسال عکس و ویدیو، ویترین کلاس، نمرات گروه و گفتگو با استاد.">
-<meta name="author" content="نیما جانی، ایلیا باستانی">
-<meta name="robots" content="index, follow, max-image-preview:large">
+<title>سایت دیدگاه منتقل شد | تفکر و سواد رسانه‌ای</title>
+<meta name="description" content="سایت دانلود اپلیکیشن دیدگاه (تفکر و سواد رسانه‌ای) برای دسترسی بدون فیلترشکن به ابر آروان منتقل شد.">
+<meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://didgah.s3-website.ir-central1.arvanstorage.ir/">
 <meta name="theme-color" content="#0f2647">
 <link rel="icon" type="image/png" sizes="64x64" href="assets/img/logo-64.png">
 <link rel="apple-touch-icon" href="assets/img/logo-192.png">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="دیدگاه تفکر و سواد رسانه‌ای">
-<meta property="og:locale" content="fa_IR">
-<meta property="og:url" content="https://didgah.s3-website.ir-central1.arvanstorage.ir/">
-<meta property="og:title" content="دیدگاه تفکر و سواد رسانه‌ای | دانلود اپلیکیشن دیدگاه">
-<meta property="og:description" content="فعالیت هفتگی، ارسال کار گروهی، نمرات و گفتگو با استاد در یک اپ.">
-<meta property="og:image" content="https://didgah.s3-website.ir-central1.arvanstorage.ir/assets/img/banner.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "name": "دیدگاه تفکر و سواد رسانه‌ای",
-      "alternateName": ["دیدگاه", "Didgah", "اپلیکیشن دیدگاه", "دیدگاه تفکر و سواد رسانه ای"],
-      "url": "https://didgah.s3-website.ir-central1.arvanstorage.ir/",
-      "inLanguage": "fa"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "دیدگاه تفکر و سواد رسانه‌ای",
-      "alternateName": ["دیدگاه", "Didgah"],
-      "description": "اپلیکیشن کلاس تفکر و سواد رسانه‌ای با فعالیت هفتگی، ارسال عکس و ویدیو، ویترین کلاس، نمرات گروه و گفتگو با استاد.",
-      "url": "https://didgah.s3-website.ir-central1.arvanstorage.ir/",
-      "applicationCategory": "EducationalApplication",
-      "operatingSystem": "Android 8.0+, iOS",
-      "softwareVersion": "1.7",
-      "downloadUrl": "https://didgah.s3-website.ir-central1.arvanstorage.ir/Didgah.apk",
-      "image": "https://didgah.s3-website.ir-central1.arvanstorage.ir/assets/img/logo-192.png",
-      "inLanguage": "fa",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "IRR" },
-      "author": [
-        { "@type": "Person", "name": "نیما جانی" },
-        { "@type": "Person", "name": "ایلیا باستانی" }
-      ]
-    }
-  ]
-}
-</script>
 <link rel="preload" href="assets/fonts/estedad_regular.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="assets/fonts/estedad_bold.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  @font-face { font-family: Estedad; src: url(assets/fonts/estedad_regular.ttf) format("truetype"); font-weight: 400; font-display: swap; }
+  @font-face { font-family: Estedad; src: url(assets/fonts/estedad_medium.ttf) format("truetype"); font-weight: 500; font-display: swap; }
+  @font-face { font-family: Estedad; src: url(assets/fonts/estedad_semibold.ttf) format("truetype"); font-weight: 600; font-display: swap; }
+  @font-face { font-family: Estedad; src: url(assets/fonts/estedad_bold.ttf) format("truetype"); font-weight: 700; font-display: swap; }
+
+  :root {
+    --navy-900: #0b1d38;
+    --navy-800: #0f2647;
+    --navy-700: #13305a;
+    --navy-500: #2c4a75;
+    --blue: #3d8fd6;
+    --ice: #e8edf4;
+    --ice-2: #d6dfea;
+    --text: #13294a;
+    --muted: #5d6f88;
+    --white: #ffffff;
+    --safe-b: env(safe-area-inset-bottom, 0px);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: Estedad, Tahoma, sans-serif;
+    color: var(--white);
+    background: var(--navy-900);
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 3px solid #6cc3ff; outline-offset: 3px; border-radius: 8px; }
+
+  .moved-page {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    background:
+      radial-gradient(900px 600px at 80% 18%, rgba(61,143,214,.35), transparent 60%),
+      radial-gradient(700px 500px at 10% 90%, rgba(44,74,117,.6), transparent 60%),
+      linear-gradient(160deg, var(--navy-700), var(--navy-900));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 28px 24px calc(26px + var(--safe-b));
+    overflow: hidden;
+  }
+
+  .corner {
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    border-color: rgba(255,255,255,.26);
+    border-style: solid;
+    pointer-events: none;
+  }
+  .corner.tl { top: 24px; left: 24px; border-width: 2px 0 0 2px; }
+  .corner.br { bottom: 24px; right: 24px; border-width: 0 2px 2px 0; }
+
+  .top-brand {
+    width: min(760px, 100%);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--white);
+  }
+  .brand svg {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.22);
+  }
+  .old-tag {
+    font-size: 12px;
+    color: #9fb3cf;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.12);
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+
+  .center-card {
+    width: min(720px, 100%);
+    margin: 28px auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: rgba(255,255,255,.1);
+    color: #c9d8ec;
+    border: 1px solid rgba(255,255,255,.15);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #6cc3ff;
+    box-shadow: 0 0 0 4px rgba(108,195,255,.22);
+  }
+
+  .center-card h1 {
+    font-size: clamp(2rem, 4.8vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 16px 0 10px;
+  }
+
+  .lead {
+    color: #b6c6dc;
+    font-size: 1.02rem;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  .reasons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 26px;
+    text-align: right;
+  }
+  .reason {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 20px;
+    padding: 16px;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+  .reason-ic {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: rgba(108,195,255,.16);
+    color: #8fd3ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .reason h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .reason p {
+    font-size: 0.82rem;
+    color: #b6c6dc;
+    line-height: 1.65;
+  }
+
+  .cta-panel {
+    margin-top: 26px;
+    background: var(--ice);
+    color: var(--text);
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: 0 24px 50px rgba(0,0,0,.32);
+  }
+  .new-url-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: var(--white);
+    border: 1px solid var(--ice-2);
+    border-radius: 14px;
+    padding: 10px 14px;
+    margin-bottom: 14px;
+    direction: ltr;
+  }
+  .new-url-text {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12.5px;
+    color: var(--navy-800);
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .url-badge {
+    flex: none;
+    background: #e3f3ff;
+    color: var(--navy-800);
+    font-family: Estedad, Tahoma, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+
+  .cta-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 0.96rem;
+    border-radius: 14px;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform .15s, box-shadow .2s, background .2s;
+  }
+  .btn:active { transform: scale(.98); }
+  .btn-dark {
+    background: var(--navy-800);
+    color: var(--white);
+    box-shadow: 0 10px 22px rgba(15,38,71,.24);
+  }
+  .btn-light {
+    background: var(--white);
+    color: var(--navy-800);
+    border: 1.5px solid var(--ice-2);
+  }
+  @media (hover: hover) {
+    .btn-dark:hover { background: var(--navy-700); transform: translateY(-2px); }
+    .btn-light:hover { background: #f5f8fc; }
+  }
+
+  .mci-note {
+    margin-top: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: right;
+    background: rgba(15,38,71,.07);
+    border: 1px solid rgba(15,38,71,.14);
+    border-radius: 14px;
+    padding: 11px 14px;
+    font-size: 12.5px;
+    line-height: 1.75;
+    color: var(--text);
+  }
+  .mci-note svg {
+    flex: none;
+    margin-top: 3px;
+    color: var(--navy-700);
+  }
+
+  .foot {
+    width: min(760px, 100%);
+    margin: 0 auto;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 12.5px;
+    color: #9fb3cf;
+    position: relative;
+    z-index: 2;
+  }
+  .foot b { color: var(--white); }
+
+  .toast {
+    position: fixed;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--navy-800);
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,.2);
+    padding: 10px 18px;
+    border-radius: 14px;
+    font-size: 13px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .2s;
+    z-index: 99;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  @media (max-width: 680px) {
+    .corner { display: none; }
+    .moved-page { padding: 20px 16px calc(22px + var(--safe-b)); }
+    .center-card { margin: 20px auto; }
+    .center-card h1 { font-size: 1.85rem; }
+    .lead { font-size: 0.92rem; }
+    .reasons { grid-template-columns: 1fr; gap: 10px; }
+    .cta-panel { padding: 16px; }
+    .cta-row { grid-template-columns: 1fr; }
+    .foot { flex-direction: column; align-items: center; text-align: center; }
+  }
+</style>
 </head>
 <body>
+  <div class="moved-page">
+    <span class="corner tl" aria-hidden="true"></span>
+    <span class="corner br" aria-hidden="true"></span>
 
-<!-- ======== Header ======== -->
-<header class="top" id="top">
-  <div class="wrap nav">
-    <a href="#" class="brand"><img src="assets/img/logo-64.png" width="40" height="40" alt="لوگوی دیدگاه">دیدگاه</a>
-    <nav class="nav-links">
-      <a href="#about">درباره</a>
-      <a href="#features">امکانات</a>
-      <a href="#gallery" class="nav-gallery">تصاویر</a>
-      <a href="#install">راهنمای نصب</a>
-      <a href="account.html">نام کاربری</a>
-      <a href="minimo.html">آموزش</a>
-    </nav>
-    <a class="btn btn-small header-dl js-download" href="Didgah.apk" download="Didgah.apk" aria-label="دانلود APK">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
-      <span class="dl-label">دانلود</span>
-    </a>
-  </div>
-</header>
+    <header class="top-brand">
+      <a class="brand" href="https://didgah.s3-website.ir-central1.arvanstorage.ir/">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 822 822" aria-hidden="true"><g transform="translate(-235 -211)"><path fill="#E8EDF3" d="M465,211L827,211A230,230 0 0 1,1057 441L1057,803A230,230 0 0 1,827 1033L465,1033A230,230 0 0 1,235 803L235,441A230,230 0 0 1,465 211Z"/><path fill="#0F2747" d="M400,410Q400,347 463,347L645,347A242,242 0 0 1,645 831L502,831L418,896Q400,906 400,885Z"/><path fill="#E8EDF3" d="M400,430L710,540A84,84 0 0 0,710 657L400,765Z"/><path fill="#0F2747" d="M400,472L548,530Q598,552 598,598Q598,644 548,666L400,722Z"/><path fill="#E8EDF3" d="M710,598A60,60 0,1 0,830 598A60,60 0,1 0,710 598Z"/></g></svg>
+        دیدگاه
+      </a>
+      <span class="old-tag">آدرس قبلی سایت</span>
+    </header>
 
-<!-- ======== Hero ======== -->
-<section class="hero">
-  <span class="corner tl"></span><span class="corner br"></span>
-  <div class="hero-grid">
-    <div>
-      <span class="eyebrow">برای اندروید و آیفون</span>
-      <h1>دیدگاه</h1>
-      <div class="tagline">کلاس تفکر و سواد رسانه‌ای</div>
+    <main class="center-card">
+      <span class="eyebrow">انتقال به سرور جدید</span>
+      <h1>سایت دیدگاه منتقل شد</h1>
       <p class="lead">
-        فعالیت هفتگی کلاس، ارسال کار گروهی با عکس و ویدیو، نمره و بازخورد استاد و گفتگو، همه در یک اپلیکیشن ساده.
+        به‌خاطر محدودیت دسترسی به GitHub در ایران و نیاز به فیلترشکن، سایت دانلود اپلیکیشن <b>دیدگاه</b> به سرورهای داخل کشور منتقل شد تا همیشه راحت و سریع به آخرین نسخه دسترسی داشته باشید.
       </p>
-      <div class="cta-row" id="hero-cta">
-        <a class="btn btn-primary js-download" href="Didgah.apk" download="Didgah.apk">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 9.48l1.84-3.18a.38.38 0 00-.66-.38l-1.86 3.22A11.4 11.4 0 0012 8.1c-1.77 0-3.43.38-4.92 1.04L5.22 5.92a.38.38 0 00-.66.38L6.4 9.48A10.8 10.8 0 001 18h22a10.8 10.8 0 00-5.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"/></svg>
-          دانلود APK برای اندروید
-        </a>
-        <a class="btn btn-ios" href="https://didgah-web.mahyar-447.workers.dev/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
-          نسخه‌ی PWA برای آیفون
-        </a>
-      </div>
-      <div class="hero-links">
-        <a class="guide-link" href="#install">راهنمای نصب اندروید و آیفون</a>
-        <a class="guide-link" href="account.html">نام کاربری و رمزت را نمی‌دانی؟</a>
-      </div>
-      <div class="meta">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg>نسخه ۱٫۷</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>حجم ۱۵٫۷ مگابایت</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>اندروید ۸ و بالاتر، و آیفون</span>
-      </div>
-    </div>
-    <div class="hero-phones" aria-hidden="true">
-      <div class="phone p2"><img src="assets/img/showcase-540.webp" srcset="assets/img/showcase-540.webp 540w, assets/img/showcase.webp 1080w" sizes="(max-width: 920px) 54vw, 290px" width="540" height="960" alt="" fetchpriority="high"></div>
-      <div class="phone p1"><img src="assets/img/home-540.webp" srcset="assets/img/home-540.webp 540w, assets/img/home.webp 1080w" sizes="(max-width: 920px) 54vw, 290px" width="540" height="960" alt="" fetchpriority="high"></div>
-    </div>
-  </div>
-</section>
 
-<!-- ======== About ======== -->
-<section id="about">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="num">دیدگاه چیست؟</div>
-      <h2>خبر را ببین، بسنج، تحلیل کن</h2>
-      <p>دیدگاه همراه کلاس تفکر و سواد رسانه‌ای است؛ جایی که دانش‌آموزان هر هفته در قالب گروه، یک پدیده‌ی رسانه‌ای را بررسی می‌کنند و نتیجه را برای استاد می‌فرستند.</p>
-    </div>
-    <div class="about-grid">
-      <div class="about-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
-        <h3>تفکر انتقادی</h3>
-        <p>با فعالیت‌های واقعی مثل مقایسه‌ی تیترها، ردیابی منبع تصویر و شناسایی خبر جعلی.</p>
-      </div>
-      <div class="about-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0113 0"/><path d="M16 4.5a3.5 3.5 0 010 7M21.5 20a6.5 6.5 0 00-4-6"/></svg></div>
-        <h3>کار گروهی</h3>
-        <p>هر گروه کار مشترکش را یک‌جا ثبت می‌کند و نمره و بازخورد را با هم می‌بیند.</p>
-      </div>
-      <div class="about-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/></svg></div>
-        <h3>ارتباط با استاد</h3>
-        <p>گفتگوی خصوصی با استاد و امکان ارسال انتقاد و پیشنهاد به صورت ناشناس.</p>
-      </div>
-    </div>
-
-    <div class="devs reveal" id="developers">
-      <div class="devs-text">
-        <span class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg>برنامه‌نویسان</span>
-        <h3>سازندگان دیدگاه</h3>
-        <p>دیدگاه توسط نیما جانی و ایلیا باستانی طراحی و برنامه‌نویسی شده است.</p>
-      </div>
-      <div class="dev-list">
-        <div class="dev"><span class="av">ن</span><div><b>نیما جانی</b><small>برنامه‌نویس</small></div></div>
-        <div class="dev"><span class="av">ا</span><div><b>ایلیا باستانی</b><small>برنامه‌نویس</small></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======== Features ======== -->
-<section class="features" id="features">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="num">امکانات</div>
-      <h2>هر چه کلاس لازم دارد</h2>
-      <p>شش بخش اصلی دیدگاه، از دیدن تکلیف تا گرفتن نمره.</p>
-    </div>
-
-    <div class="feature reveal">
-      <div>
-        <span class="tag">۰۱ — خانه</span>
-        <h3>فعالیت هر هفته</h3>
-        <p>تکلیف، مهلت و گروهت را یک‌جا ببین.</p>
-        <ul>
-          <li>نمایش فعالیت این هفته با شمارش معکوس مهلت</li>
-          <li>دسترسی سریع به گروه و اعضای آن</li>
-          <li>آخرین نمره و بازخورد گروه در صفحه‌ی اول</li>
-        </ul>
-      </div>
-      <div class="feature-img"><img src="assets/img/home-540.webp" srcset="assets/img/home-540.webp 540w, assets/img/home.webp 1080w" sizes="(max-width: 920px) 72vw, 320px" width="540" height="960" alt="صفحه‌ی خانه‌ی دیدگاه" loading="lazy" decoding="async"></div>
-    </div>
-
-    <div class="feature reveal">
-      <div>
-        <span class="tag">۰۲ — ارسال کار</span>
-        <h3>عکس و ویدیو</h3>
-        <p>کار گروه را مستقیم برای استاد بفرست.</p>
-        <ul>
-          <li>افزودن چند عکس و ویدیو به هر فعالیت</li>
-          <li>نمایش وضعیت و پیشرفت بارگذاری</li>
-          <li>توضیحات اختیاری کنار فایل‌ها</li>
-        </ul>
-      </div>
-      <div class="feature-img"><img src="assets/img/submit-540.webp" srcset="assets/img/submit-540.webp 540w, assets/img/submit.webp 1080w" sizes="(max-width: 920px) 72vw, 320px" width="540" height="960" alt="صفحه‌ی ارسال کار" loading="lazy" decoding="async"></div>
-    </div>
-
-    <div class="feature reveal">
-      <div>
-        <span class="tag">۰۳ — ویترین</span>
-        <h3>ویترین کلاس</h3>
-        <p>کارهای همه‌ی گروه‌ها و کلاس‌ها را ببین و از هم یاد بگیرید.</p>
-        <ul>
-          <li>فیلتر بر اساس کلاس</li>
-          <li>مشاهده‌ی عکس‌ها و پخش ویدیوها</li>
-        </ul>
-      </div>
-      <div class="feature-img"><img src="assets/img/showcase-540.webp" srcset="assets/img/showcase-540.webp 540w, assets/img/showcase.webp 1080w" sizes="(max-width: 920px) 72vw, 320px" width="540" height="960" alt="ویترین کلاس" loading="lazy" decoding="async"></div>
-    </div>
-
-    <div class="feature reveal">
-      <div>
-        <span class="tag">۰۴ — گروه من</span>
-        <h3>گروه و نمرات</h3>
-        <p>نمره و بازخورد هر فعالیت، همراه با میانگین گروه.</p>
-        <ul>
-          <li>فهرست اعضا و سرگروه</li>
-          <li>نمره‌ی حرفی و بازخورد متنی استاد</li>
-          <li>وضعیت کارهای در انتظار نمره</li>
-        </ul>
-      </div>
-      <div class="feature-img"><img src="assets/img/group-540.webp" srcset="assets/img/group-540.webp 540w, assets/img/group.webp 1080w" sizes="(max-width: 920px) 72vw, 320px" width="540" height="960" alt="صفحه‌ی گروه و نمرات" loading="lazy" decoding="async"></div>
-    </div>
-
-    <div class="feature reveal">
-      <div>
-        <span class="tag">۰۵ — گفتگو</span>
-        <h3>گفتگو با استاد</h3>
-        <p>گفتگوی خصوصی و متنی، با نمایش وضعیت ارسال و خوانده شدن پیام.</p>
-      </div>
-      <div class="feature-img"><img src="assets/img/chat-540.webp" srcset="assets/img/chat-540.webp 540w, assets/img/chat.webp 1080w" sizes="(max-width: 920px) 72vw, 320px" width="540" height="960" alt="گفتگو با استاد" loading="lazy" decoding="async"></div>
-    </div>
-
-    <div class="feature reveal">
-      <div>
-        <span class="tag">۰۶ — انتقاد و پیشنهاد</span>
-        <h3>پیام ناشناس</h3>
-        <p>نظرت را بدون نمایش نام بفرست. استاد فقط متن را می‌بیند.</p>
-      </div>
-      <div class="feature-img"><img src="assets/img/anonymous-540.webp" srcset="assets/img/anonymous-540.webp 540w, assets/img/anonymous.webp 1080w" sizes="(max-width: 920px) 72vw, 320px" width="540" height="960" alt="ارسال پیام ناشناس" loading="lazy" decoding="async"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ======== Gallery (laptop/desktop only) ======== -->
-<section class="gallery" id="gallery">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="num">تصاویر</div>
-      <h2>نگاهی به اپلیکیشن</h2>
-    </div>
-  </div>
-  <div class="shots">
-    <img src="assets/img/home-540.webp" width="540" height="960" alt="خانه" loading="lazy" decoding="async">
-    <img src="assets/img/submit-540.webp" width="540" height="960" alt="ارسال کار" loading="lazy" decoding="async">
-    <img src="assets/img/showcase-540.webp" width="540" height="960" alt="ویترین" loading="lazy" decoding="async">
-    <img src="assets/img/group-540.webp" width="540" height="960" alt="گروه و نمرات" loading="lazy" decoding="async">
-    <img src="assets/img/chat-540.webp" width="540" height="960" alt="گفتگو" loading="lazy" decoding="async">
-    <img src="assets/img/anonymous-540.webp" width="540" height="960" alt="پیام ناشناس" loading="lazy" decoding="async">
-  </div>
-</section>
-
-<!-- ======== Install ======== -->
-<section id="install">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="num">راهنمای نصب</div>
-      <h2>نصب در سه قدم</h2>
-      <p>دیدگاه برای اندروید به صورت فایل APK و برای آیفون به صورت نسخه‌ی PWA در دسترس است.</p>
-    </div>
-    <div class="install-groups">
-      <div id="install-android">
-        <h3 class="install-title reveal"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 9.48l1.84-3.18a.38.38 0 00-.66-.38l-1.86 3.22A11.4 11.4 0 0012 8.1c-1.77 0-3.43.38-4.92 1.04L5.22 5.92a.38.38 0 00-.66.38L6.4 9.48A10.8 10.8 0 001 18h22a10.8 10.8 0 00-5.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"/></svg>اندروید</h3>
-        <div class="install-grid">
-          <div class="step reveal">
-            <h3>دانلود فایل</h3>
-            <p>روی دکمه‌ی «دانلود» بزنید تا فایل <b>Didgah.apk</b> در پوشه‌ی دانلودهای گوشی ذخیره شود.</p>
+      <div class="reasons">
+        <div class="reason">
+          <div class="reason-ic" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
           </div>
-          <div class="step reveal">
-            <h3>اجازه‌ی نصب</h3>
-            <p>فایل را باز کنید. اگر پیام «نصب از منابع ناشناس» آمد، به تنظیمات بروید و برای مرورگر یا مدیر فایل اجازه‌ی نصب را فعال کنید.</p>
-          </div>
-          <div class="step reveal">
-            <h3>نصب و ورود</h3>
-            <p>«نصب» را بزنید، اپ را باز کنید و با نام کاربری و رمزی که از صفحه‌ی <a class="install-step-link" href="account.html">نام کاربری</a> پیدا می‌کنید وارد شوید.</p>
-          </div>
+          <h3>بدون نیاز به VPN</h3>
+          <p>آدرس جدید با اینترنت ایران به‌طور مستقیم و بدون فیلترشکن باز می‌شود.</p>
         </div>
-        <div class="note reveal">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
-          <div>دیدگاه روی اندروید ۸ و بالاتر اجرا می‌شود. اگر نسخه‌ی قبلی را نصب دارید و هنگام نصب پیام «برنامه نصب نشد» آمد، اول نسخه‌ی قبلی را حذف کنید، فایل جدید را نصب کنید و با همان نام کاربری وارد شوید.</div>
+        <div class="reason">
+          <div class="reason-ic" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>سرعت دانلود بالاتر</h3>
+          <p>دانلود نسخه‌ی اندروید (APK) و دسترسی به نسخه‌ی آیفون خیلی سریع‌تر شده است.</p>
+        </div>
+        <div class="reason">
+          <div class="reason-ic" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>همیشه آخرین نسخه</h3>
+          <p>از این به بعد همه‌ی آپدیت‌های دیدگاه فقط در سایت جدید منتشر می‌شوند.</p>
         </div>
       </div>
 
-      <div id="install-ios">
-        <h3 class="install-title reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>آیفون (PWA)</h3>
-        <div class="install-grid">
-          <div class="step reveal">
-            <h3>باز کردن در Safari</h3>
-            <p>روی دکمه‌ی «نسخه‌ی PWA برای آیفون» بزنید. لینک باید در مرورگر <b>Safari</b> باز شود، نه داخل تلگرام یا برنامه‌های دیگر.</p>
-          </div>
-          <div class="step reveal">
-            <h3>افزودن به صفحه‌ی اصلی</h3>
-            <p>در Safari گزینه‌ی <b>Share</b> (اشتراک‌گذاری) را بزنید و <b>Add to Home Screen</b> را انتخاب کنید. خود صفحه هم راهنمای این کار را نشان می‌دهد.</p>
-          </div>
-          <div class="step reveal">
-            <h3>اجرا و ورود</h3>
-            <p>برنامه را با آیکون <b>Didgah</b> از صفحه‌ی اصلی گوشی باز کنید و با نام کاربری و رمزی که از صفحه‌ی <a class="install-step-link" href="account.html">نام کاربری</a> پیدا می‌کنید وارد شوید.</p>
-          </div>
+      <div class="cta-panel">
+        <div class="new-url-box">
+          <span class="new-url-text">https://didgah.s3-website.ir-central1.arvanstorage.ir/</span>
+          <span class="url-badge">آدرس جدید</span>
         </div>
-        <div class="note reveal">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
-          <div>نسخه‌ی آیفون نیازی به App Store ندارد و فقط بعد از افزودن به صفحه‌ی اصلی اجرا می‌شود. با همان حساب کاربری وارد می‌شوید و اطلاعاتتان با نسخه‌ی اندروید یکی است.</div>
+        <div class="cta-row">
+          <a class="btn btn-dark" href="https://didgah.s3-website.ir-central1.arvanstorage.ir/">
+            ورود به سایت جدید دیدگاه
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </a>
+          <button class="btn btn-light" id="copyBtn" type="button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            کپی آدرس جدید
+          </button>
+        </div>
+        <div class="mci-note">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span><b>نکته درباره اینترنت همراه اول:</b> سایت جدید بدون VPN باز می‌شود؛ اما برای استفاده از خود اپلیکیشن دیدگاه (در هر دو نسخه‌ی اندروید و iOS) روی اینترنت <b>همراه اول</b>، لازم است با VPN وارد شوید.</span>
         </div>
       </div>
-    </div>
-    <a class="guide-teaser reveal" href="minimo.html">
-      <span class="guide-teaser-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3"/></svg></span>
-      <span class="guide-teaser-text"><b>حجم ویدیوی مستندت زیاده؟</b><small>آموزش کم کردن حجم ویدیو با اپ رایگان Minimo</small></span>
-      <svg class="guide-teaser-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
-    </a>
+    </main>
+
+    <footer class="foot">
+      <span>کلاس تفکر و سواد رسانه‌ای</span>
+      <span>طراحی و برنامه‌نویسی: <b>نیما جانی</b> و <b>ایلیا باستانی</b></span>
+    </footer>
   </div>
-</section>
 
-<!-- ======== Final CTA ======== -->
-<section class="final" id="final">
-  <div class="wrap reveal final-grid">
-    <div class="final-main">
-    <img class="logo" src="assets/img/logo-192.png" width="92" height="92" alt="لوگوی دیدگاه" loading="lazy">
-    <h2>همین حالا دیدگاه را نصب کن</h2>
-    <p>رایگان، سبک و مخصوص کلاس شما</p>
-    <div class="final-actions">
-      <a class="btn btn-dark js-download" href="Didgah.apk" download="Didgah.apk">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
-        دانلود APK برای اندروید
-      </a>
-      <a class="btn btn-primary" href="https://didgah-web.mahyar-447.workers.dev/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
-        نسخه‌ی PWA برای آیفون
-      </a>
-    </div>
-    <div class="meta">
-      <span>نسخه ۱٫۵</span><span>|</span><span>۱۵٫۷ مگابایت</span><span>|</span><span>اندروید ۸+ و آیفون</span>
-    </div>
-    </div>
-    <!-- Laptop/desktop only: scan with a phone to open the site there -->
-    <div class="final-qr" aria-hidden="true">
-      <div class="final-qr-tile"><img src="assets/img/qr.png" width="480" height="480" alt="" loading="lazy" decoding="async"></div>
-      <span>با دوربین گوشی اسکن کن</span>
-    </div>
-  </div>
-</section>
+  <div class="toast" id="toast" role="status" aria-live="polite">آدرس جدید کپی شد</div>
 
-<footer>
-  <div class="wrap">
-    <a href="#" class="brand"><img src="assets/img/logo-64.png" width="30" height="30" alt="" loading="lazy">دیدگاه</a>
-    <div class="credit">طراحی و برنامه‌نویسی: <b>نیما جانی</b> و <b>ایلیا باستانی</b></div>
-  </div>
-</footer>
-
-<!-- Mobile sticky download bar -->
-<div class="sticky-dl" id="sticky-dl" aria-hidden="true">
-  <a class="btn btn-dark js-download" href="Didgah.apk" download="Didgah.apk" tabindex="-1">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
-    اندروید APK
-  </a>
-  <a class="btn sticky-pwa" href="https://didgah-web.mahyar-447.workers.dev/" target="_blank" rel="noopener" tabindex="-1">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
-    آیفون PWA
-  </a>
-</div>
-
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-<script>
-  // Header background on scroll
-  const header = document.getElementById('top');
-  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  // Reveal on scroll
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // Mobile sticky bar: visible once the hero buttons scroll away, hidden at the final CTA
-  const bar = document.getElementById('sticky-dl');
-  const seen = { 'hero-cta': true, final: false };
-  const updateBar = () => {
-    const show = !seen['hero-cta'] && !seen.final;
-    bar.classList.toggle('show', show);
-    bar.setAttribute('aria-hidden', String(!show));
-    document.body.classList.toggle('has-sticky', show);
-  };
-  const barIO = new IntersectionObserver(entries => {
-    entries.forEach(e => { seen[e.target.id] = e.isIntersecting; });
-    updateBar();
-  });
-  ['hero-cta', 'final'].forEach(id => barIO.observe(document.getElementById(id)));
-
-  // Download feedback
-  const toast = document.getElementById('toast');
-  let t;
-  document.querySelectorAll('.js-download').forEach(a => a.addEventListener('click', () => {
-    toast.textContent = 'دانلود شروع شد. پس از پایان، فایل Didgah.apk را روی گوشی اندروید باز کنید.';
-    toast.classList.add('show');
-    clearTimeout(t);
-    t = setTimeout(() => toast.classList.remove('show'), 4500);
-  }));
-</script>
+  <script>
+    const toast = document.getElementById('toast');
+    let timer;
+    document.getElementById('copyBtn').addEventListener('click', () => {
+      const url = 'https://didgah.s3-website.ir-central1.arvanstorage.ir/';
+      if (navigator.clipboard?.writeText) {
+        navigator.clipboard.writeText(url).catch(() => {});
+      }
+      toast.classList.add('show');
+      clearTimeout(timer);
+      timer = setTimeout(() => toast.classList.remove('show'), 2500);
+    });
+  </script>
 </body>
 </html>
